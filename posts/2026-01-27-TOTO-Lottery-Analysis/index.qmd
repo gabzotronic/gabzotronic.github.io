@@ -11,7 +11,7 @@ categories:
 image: "images/title_image.png"
 ---
 
-![](images/title_image.png)
+![*credit: Nano Banana*](images/title_image.png)
 
 # TOTO Analysis
 
