@@ -1,10 +1,45 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "gabzotronic_blog",
+    "objectID": "posts/2026-01-27-hello-world/index.html",
+    "href": "posts/2026-01-27-hello-world/index.html",
+    "title": "My First Blog Post",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "This is my first blog post! I’m going to show you some Python code."
+  },
+  {
+    "objectID": "posts/2026-01-27-hello-world/index.html#introduction",
+    "href": "posts/2026-01-27-hello-world/index.html#introduction",
+    "title": "My First Blog Post",
+    "section": "",
+    "text": "This is my first blog post! I’m going to show you some Python code."
+  },
+  {
+    "objectID": "posts/2026-01-27-hello-world/index.html#basic-python-example",
+    "href": "posts/2026-01-27-hello-world/index.html#basic-python-example",
+    "title": "My First Blog Post",
+    "section": "Basic Python Example",
+    "text": "Basic Python Example\nHere’s a simple Python function:\n\ndef greet(name):\n    return f\"Hello, {name}!\"\n\nresult = greet(\"World\")\nprint(result)\n\nHello, World!"
+  },
+  {
+    "objectID": "posts/2026-01-27-hello-world/index.html#working-with-data",
+    "href": "posts/2026-01-27-hello-world/index.html#working-with-data",
+    "title": "My First Blog Post",
+    "section": "Working with Data",
+    "text": "Working with Data\nYou can also work with data structures:\n\nnumbers = [1, 2, 3, 4, 5]\nsquared = [x**2 for x in numbers]\nprint(f\"Original: {numbers}\")\nprint(f\"Squared: {squared}\")\n\nOriginal: [1, 2, 3, 4, 5]\nSquared: [1, 4, 9, 16, 25]"
+  },
+  {
+    "objectID": "posts/2026-01-27-hello-world/index.html#conclusion",
+    "href": "posts/2026-01-27-hello-world/index.html#conclusion",
+    "title": "My First Blog Post",
+    "section": "Conclusion",
+    "text": "Conclusion\nThat’s it! You now know how to write blog posts with Quarto."
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "My First Blog Post\n\n\n\npython\n\ntutorial\n\n\n\nA post with Python code\n\n\n\n\n\nJan 27, 2026\n\n\nGabriel\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -12,5 +47,12 @@
     "title": "About",
     "section": "",
     "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "gabzotronic_blog",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   }
 ]
