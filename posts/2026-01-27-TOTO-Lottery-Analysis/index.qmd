@@ -365,7 +365,7 @@ Note that the probability of a strong loss occurring increases as ticket sales d
 
 But wait! How is it that when ticket sales are *smaller*, there's a *higher* probability of Singapore Pools suffering a strong loss? That's confusing.
 
-![Standard deviation of fixed prize payouts as a function of ticket sales](images/image%2011.png)
+![](images/image%2011.png)
 
 But here's the thing: Singapore Pools suffers a strong loss as a proportion of $N$.
 
