@@ -423,11 +423,11 @@ Var[i\text{ is drawn in dataset}] = np(1-p) = 1154 \times 7/49 \times 42/49 = 14
 <p>“But wait!” you say, putting your TOTO tickets aside for a moment. “That’s just back-of-the-envelope math, and all I have is this TOTO ticket to scribble on! Maybe there are other hot or cold numbers?”</p>
 <p>You’re right, we’ve only looked at the hottest and coldest numbers so far. A complementary check we could perform would be the Chi-Square Test, denoted by the formula</p>
 <p><span class="math display">\[
-\Chi^2 = \sum_{i=1}^{49}\frac{(o_i - e_i)^2}{e_i}
+\chi^2 = \sum_{i=1}^{49}\frac{(o_i - e_i)^2}{e_i}
 \]</span></p>
 <p>Where <span class="math inline">\(o_i\)</span> and <span class="math inline">\(e_i\)</span> are the observed and expected number of occurrences for the TOTO number <span class="math inline">\(i\)</span> respectively.</p>
-<p>While previously we were looking at individual outlying TOTO numbers, here the Chi-Square test checks all 49 TOTO numbers to see if each and every TOTO number follows a binomial distribution. More specifically, the value of <span class="math inline">\(\Chi^2\)</span> represents the sum of deviations from the expected occurrences, which can be checked against the Chi-Square distribution to obtain the probability that all TOTO numbers have a fair chance of being drawn (which we call the null hypothesis).</p>
-<p>From calculation, <span class="math inline">\(\Chi^2=32.73\)</span>, and with <span class="math inline">\(49-1=48\)</span> degrees of freedom, the p-value obtained is <span class="math inline">\(95.48\%\)</span> (probability of the dataset representing samples of a fair TOTO draw).</p>
+<p>While previously we were looking at individual outlying TOTO numbers, here the Chi-Square test checks all 49 TOTO numbers to see if each and every TOTO number follows a binomial distribution. More specifically, the value of <span class="math inline">\(\chi^2\)</span> represents the sum of deviations from the expected occurrences, which can be checked against the Chi-Square distribution to obtain the probability that all TOTO numbers have a fair chance of being drawn (which we call the null hypothesis).</p>
+<p>From calculation, <span class="math inline">\(\chi^2=32.73\)</span>, and with <span class="math inline">\(49-1=48\)</span> degrees of freedom, the p-value obtained is <span class="math inline">\(95.48\%\)</span> (probability of the dataset representing samples of a fair TOTO draw).</p>
 <p>Unfortunately, the data shows that TOTO is <strong>very likely not rigged</strong>, and every TOTO number has an equally likely probability of occurring<strong>.</strong></p>
 <p><strong>A Slight Detour into Psychology</strong></p>
 <p>Gambling is interesting to me because its analysis sits at the intersection of math and psychology. This perception of hot and cold numbers has been comprehensively documented under the term “<a href="https://en.wikipedia.org/wiki/Gambler%27s_fallacy">The Gambler’s Fallacy</a>”. The little voice in our head insisting that previously absent numbers should appear soon suggests some link between previous TOTO draws and current ones. That the mathematical reality is that each draw is independent from past and future draws also requires some manner of belief; in the infallible logic of math.</p>
@@ -631,7 +631,7 @@ Var[i\text{ is drawn in dataset}] = np(1-p) = 1154 \times 7/49 \times 42/49 = 14
 <p><img src="images/image 11.png" class="img-fluid"></p>
 <p>But here’s the thing: Singapore Pools suffers a strong loss as a proportion of <span class="math inline">\(N\)</span>.</p>
 <p><span class="math display">\[
-\text{Strong Loss Occurs} \rarr \text{Payout Groups 5 to 7} &gt; 0.703N
+\text{Strong Loss Occurs} \rightarrow \text{Payout Groups 5 to 7} &gt; 0.703N
 \]</span></p>
 <p>Equivalently,</p>
 <p><span class="math display">\[

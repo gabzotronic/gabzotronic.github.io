@@ -168,14 +168,14 @@ In other words, if a TOTO number truly does follow a binomial distribution (and 
 You're right, we've only looked at the hottest and coldest numbers so far. A complementary check we could perform would be the Chi-Square Test, denoted by the formula
 
 $$
-\Chi^2 = \sum_{i=1}^{49}\frac{(o_i - e_i)^2}{e_i}
+\chi^2 = \sum_{i=1}^{49}\frac{(o_i - e_i)^2}{e_i}
 $$
 
 Where $o_i$ and $e_i$ are the observed and expected number of occurrences for the TOTO number $i$ respectively.
 
-While previously we were looking at individual outlying TOTO numbers, here the Chi-Square test checks all 49 TOTO numbers to see if each and every TOTO number follows a binomial distribution. More specifically, the value of $\Chi^2$ represents the sum of deviations from the expected occurrences, which can be checked against the Chi-Square distribution to obtain the probability that all TOTO numbers have a fair chance of being drawn (which we call the null hypothesis).
+While previously we were looking at individual outlying TOTO numbers, here the Chi-Square test checks all 49 TOTO numbers to see if each and every TOTO number follows a binomial distribution. More specifically, the value of $\chi^2$ represents the sum of deviations from the expected occurrences, which can be checked against the Chi-Square distribution to obtain the probability that all TOTO numbers have a fair chance of being drawn (which we call the null hypothesis).
 
-From calculation, $\Chi^2=32.73$, and with $49-1=48$ degrees of freedom,  the p-value obtained is $95.48\%$ (probability of the dataset representing samples of a fair TOTO draw).
+From calculation, $\chi^2=32.73$, and with $49-1=48$ degrees of freedom,  the p-value obtained is $95.48\%$ (probability of the dataset representing samples of a fair TOTO draw).
 
 Unfortunately, the data shows that TOTO is **very likely not rigged**, and every TOTO number has an equally likely probability of occurring**.**
 
@@ -370,7 +370,7 @@ But wait! How is it that when ticket sales are *smaller*, there's a *higher* pro
 But here's the thing: Singapore Pools suffers a strong loss as a proportion of $N$.
 
 $$
-\text{Strong Loss Occurs} \rarr \text{Payout Groups 5 to 7} > 0.703N
+\text{Strong Loss Occurs} \rightarrow \text{Payout Groups 5 to 7} > 0.703N
 $$
 
 Equivalently,
