@@ -54,7 +54,7 @@ With the dataset, we can attempt to answer two questions:
 
 **Spoiler Alert:** You can't. But the real fun is in understanding why, and accepting your fate, right?
 
-![Look how excited the TOTO announcer is to inform you that you lost money!](images/image%201.png)
+![Look how excited the TOTO announcer is to inform you that you lost money! *credit: Singapore Pools YouTube*](images/image%201.png)
 
 ## Probability of Winning
 
@@ -365,7 +365,7 @@ Note that the probability of a strong loss occurring increases as ticket sales d
 
 But wait! How is it that when ticket sales are *smaller*, there's a *higher* probability of Singapore Pools suffering a strong loss? That's confusing.
 
-![](images/image%2011.png)
+![*credit: Crystal_ YouTube*](images/image%2011.png)
 
 But here's the thing: Singapore Pools suffers a strong loss as a proportion of $N$.
 
@@ -404,4 +404,4 @@ We have confirmed from historical data that TOTO is a fair lottery game, and tha
 
 This was a fun game and dataset to analyse. Further extension of this work could take the form of "what-if" analyses, potentially tuning payout amounts to optimise for income. Exploring lottery rule changes might be interesting too, inspired by [this Cash WinFall rolldown story](https://highline.huffingtonpost.com/articles/en/lotto-winners/). If you're interested in a real-world group of people beating the odds, it's a great read. Thanks for your time!
 
-![Final summary visualization](images/image%2012.png)
+![*credit: memegenerator.net*](images/image%2012.png)
