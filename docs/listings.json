@@ -1,5 +1,12 @@
 [
   {
+    "listing": "/index.html",
+    "items": [
+      "/posts/2026-01-27-TOTO-Lottery-Analysis/index.html",
+      "/posts/2026-01-27-hello-world/index.html"
+    ]
+  },
+  {
     "listing": "/blog.html",
     "items": [
       "/posts/2026-01-27-TOTO-Lottery-Analysis/index.html",

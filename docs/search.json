@@ -2,65 +2,65 @@
   {
     "objectID": "posts/2026-01-27-hello-world/index.html",
     "href": "posts/2026-01-27-hello-world/index.html",
-    "title": "My First Blog Post",
+    "title": "The First Post",
     "section": "",
-    "text": "This is my first blog post! I’m going to show you some Python code."
+    "text": "credit: muvamo.com\n\n\nOver a year ago, my wife and I moved from Singapore to Vienna. While settling down in this new city, I found time to read more, think more, and code more. With the freedom to explore, I found myself easily excited with every new idea I encountered. Looking back on 2025, I realised that I started many projects, but rarely finished any (satisfactorily). I needed a better system. Hence, this hastily constructed static page I proudly call my blog.\nThis blog is a place for me to put my thoughts down, and hopefully a place for you to pick something up. Here’s to completing more projects in the coming yea-"
   },
   {
-    "objectID": "posts/2026-01-27-hello-world/index.html#introduction",
-    "href": "posts/2026-01-27-hello-world/index.html#introduction",
-    "title": "My First Blog Post",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Work In Progress",
     "section": "",
-    "text": "This is my first blog post! I’m going to show you some Python code."
+    "text": "Welcome to my blog where I explore technical topics that interest me. I write about projects, experiments, and ideas I’m working on."
   },
   {
-    "objectID": "posts/2026-01-27-hello-world/index.html#basic-python-example",
-    "href": "posts/2026-01-27-hello-world/index.html#basic-python-example",
-    "title": "My First Blog Post",
-    "section": "Basic Python Example",
-    "text": "Basic Python Example\nHere’s a simple Python function:\n\ndef greet(name):\n    return f\"Hello, {name}!\"\n\nresult = greet(\"World\")\nprint(result)\n\nHello, World!"
+    "objectID": "index.html#hi-im-gabriel",
+    "href": "index.html#hi-im-gabriel",
+    "title": "Work In Progress",
+    "section": "",
+    "text": "Welcome to my blog where I explore technical topics that interest me. I write about projects, experiments, and ideas I’m working on."
   },
   {
-    "objectID": "posts/2026-01-27-hello-world/index.html#working-with-data",
-    "href": "posts/2026-01-27-hello-world/index.html#working-with-data",
-    "title": "My First Blog Post",
-    "section": "Working with Data",
-    "text": "Working with Data\nYou can also work with data structures:\n\nnumbers = [1, 2, 3, 4, 5]\nsquared = [x**2 for x in numbers]\nprint(f\"Original: {numbers}\")\nprint(f\"Squared: {squared}\")\n\nOriginal: [1, 2, 3, 4, 5]\nSquared: [1, 4, 9, 16, 25]"
+    "objectID": "index.html#recent-posts",
+    "href": "index.html#recent-posts",
+    "title": "Work In Progress",
+    "section": "Recent Posts",
+    "text": "Recent Posts\n\n\n\n\n\nCan You Beat TOTO? A Statistical Analysis of Singapore’s National Lottery\n\n\n\nData Analysis\n\nStatistics\n\nProbability\n\nSingapore\n\n\n\nAnalyzing 17 years of TOTO draw data to determine if lottery numbers can be predicted and whether the house always wins\n\n\n\n\n\nJan 27, 2026\n\n\n\n\n\n\n\nThe First Post\n\n\n\n\n\nNew Year, New Me\n\n\n\n\n\nJan 27, 2026\n\n\n\n\n\nNo matching items\n\nView all posts →"
   },
   {
-    "objectID": "posts/2026-01-27-hello-world/index.html#conclusion",
-    "href": "posts/2026-01-27-hello-world/index.html#conclusion",
-    "title": "My First Blog Post",
-    "section": "Conclusion",
-    "text": "Conclusion\nThat’s it! You now know how to write blog posts with Quarto."
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Systems engineer turned entrepreneur with expertise in spacecraft and radar systems. I’ve spent my career developing optimal solutions to complex problems where physics meets engineering constraints, personally driving technical innovation and leading teams to do the same.\nMy path has taken me from space mission designer to Program Director, leading teams through every phase of satellite development: writing proposals to secure funding, leading system design, hardware development and testing from benchtop into the wild, then coordinating 40+ people through launch and early operations. Along the way, I’ve kept my technical edge sharpened—personally developing satellite design and operation optimisation tools, and a novel signal processing architecture that I’ve presented at international workshops.\nIn 2024, I founded my own consulting practice. We solve optimization problems across the space and radar sector—and increasingly beyond—delivering at a pace augmented by AI. The thread that runs through our work: turning messy operational requirements into tractable problems with practical solutions.\nAvid rock climber—an activity where physics meets biomechanical constraints, and an opportunity to interact with nature."
+  },
+  {
+    "objectID": "about.html#hi-im-gabriel",
+    "href": "about.html#hi-im-gabriel",
+    "title": "About Me",
+    "section": "",
+    "text": "Systems engineer turned entrepreneur with expertise in spacecraft and radar systems. I’ve spent my career developing optimal solutions to complex problems where physics meets engineering constraints, personally driving technical innovation and leading teams to do the same.\nMy path has taken me from space mission designer to Program Director, leading teams through every phase of satellite development: writing proposals to secure funding, leading system design, hardware development and testing from benchtop into the wild, then coordinating 40+ people through launch and early operations. Along the way, I’ve kept my technical edge sharpened—personally developing satellite design and operation optimisation tools, and a novel signal processing architecture that I’ve presented at international workshops.\nIn 2024, I founded my own consulting practice. We solve optimization problems across the space and radar sector—and increasingly beyond—delivering at a pace augmented by AI. The thread that runs through our work: turning messy operational requirements into tractable problems with practical solutions.\nAvid rock climber—an activity where physics meets biomechanical constraints, and an opportunity to interact with nature."
+  },
+  {
+    "objectID": "about.html#connect",
+    "href": "about.html#connect",
+    "title": "About Me",
+    "section": "Connect",
+    "text": "Connect\n\n  LinkedIn \n  GitHub"
   },
   {
     "objectID": "blog.html",
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Can You Beat TOTO? A Statistical Analysis of Singapore’s National Lottery\n\n\n\nData Analysis\n\nStatistics\n\nProbability\n\nSingapore\n\n\n\nAnalyzing 17 years of TOTO draw data to determine if lottery numbers can be predicted and whether the house always wins\n\n\n\n\n\nJan 27, 2026\n\n\nGabriel\n\n\n\n\n\n\n\n\n\n\n\n\nMy First Blog Post\n\n\n\npython\n\ntutorial\n\n\n\nA post with Python code\n\n\n\n\n\nJan 27, 2026\n\n\nGabriel\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "gabzotronic_blog",
-    "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "Can You Beat TOTO? A Statistical Analysis of Singapore’s National Lottery\n\n\n\nData Analysis\n\nStatistics\n\nProbability\n\nSingapore\n\n\n\nAnalyzing 17 years of TOTO draw data to determine if lottery numbers can be predicted and whether the house always wins\n\n\n\n\n\nJan 27, 2026\n\n\nGabriel\n\n\n\n\n\n\n\n\n\n\n\n\nThe First Post\n\n\n\n\n\nNew Year, New Me\n\n\n\n\n\nJan 27, 2026\n\n\nGabriel\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/2026-01-27-TOTO-Lottery-Analysis/index.html",
     "href": "posts/2026-01-27-TOTO-Lottery-Analysis/index.html",
     "title": "Can You Beat TOTO? A Statistical Analysis of Singapore’s National Lottery",
     "section": "",
-    "text": "!(images/title_image.png)"
+    "text": "credit: Nano Banana"
   },
   {
     "objectID": "posts/2026-01-27-TOTO-Lottery-Analysis/index.html#prize-structure",
@@ -110,75 +110,5 @@
     "title": "Can You Beat TOTO? A Statistical Analysis of Singapore’s National Lottery",
     "section": "So, When Does the House Lose?",
     "text": "So, When Does the House Lose?\nYou can make this happen! Don’t pray play to the TOTO god. When ticket sales are low enough, there is (A) a certainty that Singapore Pools will have to top up the group 1 prize, and (B) a greater chance that fixed prize payouts exceed the total prize pool.\nWill this ever happen? I doubt so. Even if ticket sales are abnormally low, Singapore Pools can top up the prize pool (to beyond $1M), thus incentivising more players into the draw and stacking the odds in their favour."
-  },
-  {
-    "objectID": "CLAUDE.html",
-    "href": "CLAUDE.html",
-    "title": "CLAUDE.md",
-    "section": "",
-    "text": "This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.\n\n\nThis is a Quarto website/blog hosted on GitHub Pages. Quarto is a scientific and technical publishing system that allows you to create dynamic documents containing code, text, and multimedia. The project uses .qmd (Quarto Markdown) files for content.\n\n\n\n\nSource files: .qmd files in the root and posts/ subdirectories\nConfiguration: _quarto.yml defines the website structure, theme, navigation, and output settings\nOutput: Generated HTML output goes to the docs/ directory (committed to git for GitHub Pages hosting)\nStyling: Custom theme file brand (referenced in _quarto.yml) combined with the cosmo theme, plus styles.css for additional CSS\n\n\n\n\n# Preview the site locally (live reload enabled)\nquarto preview\n\n# Render the entire site to docs/\nquarto render\n\n# Render a single file\nquarto render &lt;file.qmd&gt;\n\n# Clean build artifacts (safe to delete)\nrm -r .quarto\n\n\n\n\nHome page: index.qmd\nAbout page: about.qmd\nBlog listing: blog.qmd\nBlog posts: Create new posts in posts/YYYY-MM-DD-slug/index.qmd\n\nEach .qmd file uses YAML frontmatter (between --- markers) for metadata: - title: Page title - date: Publication date (YYYY-MM-DD format) - description: Brief description - author: Author name - categories: Topic tags - toc: Whether to show table of contents\n\n\n\n\n_quarto.yml: Main configuration file controlling site structure, theme, navigation bar, and output format\nstyles.css: Custom CSS overrides\ndocs/: Generated site (do not edit directly; it’s the build output)\n.quarto/: Build cache and metadata (safe to delete)\n\n\n\n\nThe docs/ directory is committed to git and configured as the GitHub Pages source. To publish changes: 1. Run quarto render locally 2. Commit and push the updated docs/ directory to main branch\n\n\n\nRemote repository: origin → https://github.com/gabzotronic/gabzotronic.github.io.git\nPush target: When asked to push changes, push to origin main (the main branch on GitHub).\nThe typical workflow after making changes:\n# After editing .qmd files or configuration\nquarto render          # Generate updated docs/\ngit add docs/          # Stage the generated output\ngit commit -m \"...\"    # Create a commit\ngit push origin main   # Push to GitHub\n\n\n\nThe site uses MathJax for rendering LaTeX math. Before publishing posts with mathematical notation:\nChecklist before first publish: 1. Run quarto preview and visually verify all math symbols render correctly in your browser 2. Check that no symbols appear in red or show error codes like \\rarr or \\Chi\nCommon LaTeX issues and fixes: - Use standard LaTeX commands only; non-standard commands like \\Chi or \\rarr will not render - For arrows: use \\rightarrow, \\leftarrow, \\to (not \\rarr) - For chi symbol: use \\chi (lowercase, standard) or \\Chi is not valid - For summation: \\sum, for products: \\prod, for integrals: \\int - Greek letters: \\alpha, \\beta, \\gamma, \\chi, \\sigma, etc. (all lowercase)\nTesting math rendering:\nquarto preview\n# Navigate to post and check all equations render without errors\n\n\n\n\n.quarto/ and .quarto/_freeze/ are build artifacts and cached data—safe to delete but will be regenerated\nThe .gitignore excludes .quarto/ to keep the repo clean\n.nojekyll file prevents Jekyll processing on GitHub Pages, allowing Quarto to handle the site"
-  },
-  {
-    "objectID": "CLAUDE.html#project-overview",
-    "href": "CLAUDE.html#project-overview",
-    "title": "CLAUDE.md",
-    "section": "",
-    "text": "This is a Quarto website/blog hosted on GitHub Pages. Quarto is a scientific and technical publishing system that allows you to create dynamic documents containing code, text, and multimedia. The project uses .qmd (Quarto Markdown) files for content."
-  },
-  {
-    "objectID": "CLAUDE.html#architecture",
-    "href": "CLAUDE.html#architecture",
-    "title": "CLAUDE.md",
-    "section": "",
-    "text": "Source files: .qmd files in the root and posts/ subdirectories\nConfiguration: _quarto.yml defines the website structure, theme, navigation, and output settings\nOutput: Generated HTML output goes to the docs/ directory (committed to git for GitHub Pages hosting)\nStyling: Custom theme file brand (referenced in _quarto.yml) combined with the cosmo theme, plus styles.css for additional CSS"
-  },
-  {
-    "objectID": "CLAUDE.html#common-development-commands",
-    "href": "CLAUDE.html#common-development-commands",
-    "title": "CLAUDE.md",
-    "section": "",
-    "text": "# Preview the site locally (live reload enabled)\nquarto preview\n\n# Render the entire site to docs/\nquarto render\n\n# Render a single file\nquarto render &lt;file.qmd&gt;\n\n# Clean build artifacts (safe to delete)\nrm -r .quarto"
-  },
-  {
-    "objectID": "CLAUDE.html#working-with-content",
-    "href": "CLAUDE.html#working-with-content",
-    "title": "CLAUDE.md",
-    "section": "",
-    "text": "Home page: index.qmd\nAbout page: about.qmd\nBlog listing: blog.qmd\nBlog posts: Create new posts in posts/YYYY-MM-DD-slug/index.qmd\n\nEach .qmd file uses YAML frontmatter (between --- markers) for metadata: - title: Page title - date: Publication date (YYYY-MM-DD format) - description: Brief description - author: Author name - categories: Topic tags - toc: Whether to show table of contents"
-  },
-  {
-    "objectID": "CLAUDE.html#key-files",
-    "href": "CLAUDE.html#key-files",
-    "title": "CLAUDE.md",
-    "section": "",
-    "text": "_quarto.yml: Main configuration file controlling site structure, theme, navigation bar, and output format\nstyles.css: Custom CSS overrides\ndocs/: Generated site (do not edit directly; it’s the build output)\n.quarto/: Build cache and metadata (safe to delete)"
-  },
-  {
-    "objectID": "CLAUDE.html#github-pages-deployment",
-    "href": "CLAUDE.html#github-pages-deployment",
-    "title": "CLAUDE.md",
-    "section": "",
-    "text": "The docs/ directory is committed to git and configured as the GitHub Pages source. To publish changes: 1. Run quarto render locally 2. Commit and push the updated docs/ directory to main branch"
-  },
-  {
-    "objectID": "CLAUDE.html#git-and-publishing",
-    "href": "CLAUDE.html#git-and-publishing",
-    "title": "CLAUDE.md",
-    "section": "",
-    "text": "Remote repository: origin → https://github.com/gabzotronic/gabzotronic.github.io.git\nPush target: When asked to push changes, push to origin main (the main branch on GitHub).\nThe typical workflow after making changes:\n# After editing .qmd files or configuration\nquarto render          # Generate updated docs/\ngit add docs/          # Stage the generated output\ngit commit -m \"...\"    # Create a commit\ngit push origin main   # Push to GitHub"
-  },
-  {
-    "objectID": "CLAUDE.html#important-notes",
-    "href": "CLAUDE.html#important-notes",
-    "title": "CLAUDE.md",
-    "section": "",
-    "text": ".quarto/ and .quarto/_freeze/ are build artifacts and cached data—safe to delete but will be regenerated\nThe .gitignore excludes .quarto/ to keep the repo clean\n.nojekyll file prevents Jekyll processing on GitHub Pages, allowing Quarto to handle the site"
-  },
-  {
-    "objectID": "CLAUDE.html#latex-and-math-notation",
-    "href": "CLAUDE.html#latex-and-math-notation",
-    "title": "CLAUDE.md",
-    "section": "",
-    "text": "The site uses MathJax for rendering LaTeX math. Before publishing posts with mathematical notation:\nChecklist before first publish: 1. Run quarto preview and visually verify all math symbols render correctly in your browser 2. Check that no symbols appear in red or show error codes like \\rarr or \\Chi\nCommon LaTeX issues and fixes: - Use standard LaTeX commands only; non-standard commands like \\Chi or \\rarr will not render - For arrows: use \\rightarrow, \\leftarrow, \\to (not \\rarr) - For chi symbol: use \\chi (lowercase, standard) or \\Chi is not valid - For summation: \\sum, for products: \\prod, for integrals: \\int - Greek letters: \\alpha, \\beta, \\gamma, \\chi, \\sigma, etc. (all lowercase)\nTesting math rendering:\nquarto preview\n# Navigate to post and check all equations render without errors"
   }
 ]
