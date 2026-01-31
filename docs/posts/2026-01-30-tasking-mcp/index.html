@@ -194,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
 <p>This article presents a Model Context Protocol (MCP) server for high-revisit satellite constellation image tasking. The MCP server allows for ease of connection to most Large Language Models (LLMs), offering a flexible and agentic image tasking workflow with a natural language chat interface.</p>
-<p>Oftentimes, the number of requested images are much more than the constellation of imaging sensors can service. The selection of imaging tasks (i.e., “task schedule”) is achieved by optimising for revisit frequency, ensuring cooperation between all satellites in the constellation, and taking into account a comprehensive set of hardware constraints that guarantees a realistic solution.</p>
+<p>Oftentimes, the number of requested images are much more than the constellation of imaging sensors can service. Assigning a subset of imaging tasks (i.e., “task schedule”) to each satellite sensor is achieved by optimising for revisit frequency, ensuring cooperation between all satellites in the constellation, and taking into account a comprehensive set of hardware constraints that guarantees a realistic solution.</p>
 <section id="high-revisit-imaging" class="level2">
 <h2 class="anchored" data-anchor-id="high-revisit-imaging">High-revisit Imaging</h2>
 <p>When considering sub-meter, high resolution imagery, optimizing revisit frequency directly increases revenue per satellite asset for several important applications.</p>
@@ -215,7 +215,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="our-solution" class="level1">
 <h1>Our Solution</h1>
-<p>To reduce operator cognitive load while maintaining highly optimal tasking schedules, we built an MCP server that allows operators to generate task schedules with the aid of an LLM like Claude, ChatGPT, or DeepSeek.</p>
+<p>To reduce operator cognitive load while maintaining highly optimal tasking schedules, we built an MCP server that allows operators to generate task schedules with the aid of an LLM like Claude, ChatGPT, or DeepSeek. MCP servers provide a standardised connection for LLMs to external tools, data, and resources.</p>
 <ol type="1">
 <li>We <strong>abstract</strong> satellite operations at a high level, while taking into account key operator considerations such as manoeuvre, thermal, and data limits. This abstraction enables a <em>unified</em> workflow across different satellites, while respecting <em>individual</em> system constraints.</li>
 <li>We designed tools, resources, and prompts to enable <strong>agentic workflows</strong>, greatly reducing the cognitive load on the operator.</li>
@@ -288,7 +288,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="conclusion" class="level1">
 <h1>Conclusion</h1>
-<p>In this article, we have demonstrated the capabilities of our Tasking MCP server, leveraging the powerful agentic workflows of LLMs to provide optimal, high-revisit task schedules for a mixed-sensor constellation.</p>
+<p>In this article, we have demonstrated the features of our Tasking MCP server, leveraging the powerful agentic capabilities of LLMs to provide optimal, high-revisit task schedules for a mixed-sensor constellation.</p>
 <p>This MCP server is currently under further development. Adroitly Consulting is working with a Singaporean satellite company to integrate the MCP server into their tasking platform. We are open to further collaboration.</p>
 
 
