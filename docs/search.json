@@ -1,59 +1,122 @@
 [
   {
-    "objectID": "posts/2026-01-30-tasking-mcp/index.html",
-    "href": "posts/2026-01-30-tasking-mcp/index.html",
+    "objectID": "posts/2026-01-27-hello-world/index.html",
+    "href": "posts/2026-01-27-hello-world/index.html",
+    "title": "The First Post",
+    "section": "",
+    "text": "credit: muvamo.com\n\n\nOver a year ago, my wife and I moved from Singapore to Vienna. While settling down in this new city, I found time to read more, think more, and code more. With the freedom to explore, I found myself easily excited with every new idea I encountered. Looking back on 2025, I realised that I started many projects, but rarely finished any (satisfactorily). I needed a better system. Hence, this hastily constructed static page I proudly call my blog.\nThis blog is a place for me to put my thoughts down, and hopefully a place for you to pick something up. Here’s to completing more projects in the coming yea-"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "A Work In Progress",
+    "section": "",
+    "text": "Welcome to my blog where I explore technical topics that interest me. I write about projects, experiments, and ideas I’m working on."
+  },
+  {
+    "objectID": "index.html#hi-im-gabriel",
+    "href": "index.html#hi-im-gabriel",
+    "title": "A Work In Progress",
+    "section": "",
+    "text": "Welcome to my blog where I explore technical topics that interest me. I write about projects, experiments, and ideas I’m working on."
+  },
+  {
+    "objectID": "index.html#recent-posts",
+    "href": "index.html#recent-posts",
+    "title": "A Work In Progress",
+    "section": "Recent Posts",
+    "text": "Recent Posts\n\n\n\n\n\n\n\n\n\n\nSatellite Tasking MCP Server\n\n\n\nAdroitly\n\nMCP\n\noptimisation\n\n\n\nBuilding a Model Context Protocol server for satellite image tasking with natural language and agentic workflows\n\n\n\n\n\nJan 30, 2026\n\n\nGabriel\n\n\n\n\n\n\n\n\n\n\n\n\nCan You Beat TOTO? A Statistical Analysis of Singapore’s National Lottery\n\n\n\nData Analysis\n\nStatistics\n\nProbability\n\nSingapore\n\n\n\nAnalyzing 17 years of TOTO draw data to determine if lottery numbers can be predicted and whether the house always wins\n\n\n\n\n\nJan 27, 2026\n\n\nGabriel\n\n\n\n\n\n\n\n\n\n\n\n\nThe First Post\n\n\n\n\n\nNew Year, New Me\n\n\n\n\n\nJan 27, 2026\n\n\nGabriel\n\n\n\n\n\nNo matching items\n\nView more blog posts → | Company Showcase →"
+  },
+  {
+    "objectID": "adroitly/2026-01-30-tasking-mcp/index.html",
+    "href": "adroitly/2026-01-30-tasking-mcp/index.html",
     "title": "Satellite Tasking MCP Server",
     "section": "",
     "text": "credit: Nano Banana"
   },
   {
-    "objectID": "posts/2026-01-30-tasking-mcp/index.html#high-revisit-imaging",
-    "href": "posts/2026-01-30-tasking-mcp/index.html#high-revisit-imaging",
+    "objectID": "adroitly/2026-01-30-tasking-mcp/index.html#high-revisit-imaging",
+    "href": "adroitly/2026-01-30-tasking-mcp/index.html#high-revisit-imaging",
     "title": "Satellite Tasking MCP Server",
     "section": "High-revisit Imaging",
     "text": "High-revisit Imaging\nWhen considering sub-meter, high resolution imagery, optimizing revisit frequency directly increases revenue per satellite asset for several important applications.\nFirstly, some applications are inherently time sensitive: agriculture, deforestation monitoring, and disaster response require timely updates on the order of minutes for critical decisions to be made. An example would be the detection of man-made fires in the forests of Riau, Indonesia - an area spanning over 80,000 square kilometers - authorities need to know where to deploy their limited resources to combat this illegal farming practice before further harm occurs.\nSecondly, applications in predictive analytics and anomaly detection require multiple satellite images of a location to build up a baseline pattern-of-life. A short temporal sampling period on the order of hours would provide information on intra-day patterns - particularly useful for urban areas.\nFinally, advanced imagery products such as Synthetic Aperture Radar (SAR) tomography or interferometry require the acquisition of images in a short timeframe, to minimise temporal decorrelation of the scene."
   },
   {
-    "objectID": "posts/2026-01-30-tasking-mcp/index.html#mixed-sensor-constellations",
-    "href": "posts/2026-01-30-tasking-mcp/index.html#mixed-sensor-constellations",
+    "objectID": "adroitly/2026-01-30-tasking-mcp/index.html#mixed-sensor-constellations",
+    "href": "adroitly/2026-01-30-tasking-mcp/index.html#mixed-sensor-constellations",
     "title": "Satellite Tasking MCP Server",
     "section": "Mixed Sensor Constellations",
     "text": "Mixed Sensor Constellations\nMixed sensor constellations can be used to meet a single mission objective, often to better results than a homogeneous sensor constellation. For example, a mix of SAR and Electro-Optical (EO) sensors would be complementary in surveillance applications - EO providing easily-interpretable daytime imagery, and the active SAR sensor providing that all-weather, day-or-night imaging capability.\nThe benefits of mixed sensor constellations are not without its operational drawbacks. Operating multiple sensors - especially from different vendors - would imply dealing with different tasking workflows or different satellite constraints. This increases the cognitive load on the operator, particularly when the time pressure of high-revisit imaging is involved."
   },
   {
-    "objectID": "posts/2026-01-30-tasking-mcp/index.html#putting-it-together-the-mixed-sensor-constellation-scheduling-problem",
-    "href": "posts/2026-01-30-tasking-mcp/index.html#putting-it-together-the-mixed-sensor-constellation-scheduling-problem",
+    "objectID": "adroitly/2026-01-30-tasking-mcp/index.html#putting-it-together-the-mixed-sensor-constellation-scheduling-problem",
+    "href": "adroitly/2026-01-30-tasking-mcp/index.html#putting-it-together-the-mixed-sensor-constellation-scheduling-problem",
     "title": "Satellite Tasking MCP Server",
     "section": "Putting It Together: The Mixed Sensor Constellation Scheduling Problem",
     "text": "Putting It Together: The Mixed Sensor Constellation Scheduling Problem\nFrom our earlier discussions, a practical optimisation problem emerges: using a (potentially heterogeneous) constellation of satellite sensors, how can an operator find the optimal sequence of imaging tasks to yield high-revisit rates over a (long) list of Areas Of Interest (AOIs)?\nIn practice, AOIs evolve or are replaced with other locations over time. Sensors come online, or become unavailable due to maintenance downtime. This implies that an optimal task schedule is not produced once, but optimised for on a regular basis. In the extreme case, operators might be attempting to solve the scheduling problem at every orbital period - some assistance and automation is clearly required."
   },
   {
-    "objectID": "posts/2026-01-30-tasking-mcp/index.html#aoi-creation",
-    "href": "posts/2026-01-30-tasking-mcp/index.html#aoi-creation",
+    "objectID": "adroitly/2026-01-30-tasking-mcp/index.html#aoi-creation",
+    "href": "adroitly/2026-01-30-tasking-mcp/index.html#aoi-creation",
     "title": "Satellite Tasking MCP Server",
     "section": "AOI Creation",
     "text": "AOI Creation\nAs with typical tasking workflows, the operator is able to create AOIs on the map (shown as blue boxes). Through a tool in the MCP server, Claude can see the indicated AOIs.\n\nAs an alternate workflow step, the operator can specify the AOIs directly to Claude through the chat interface through latitude-longitude coordinates, or location name. Claude creates the AOIs using another MCP tool."
   },
   {
-    "objectID": "posts/2026-01-30-tasking-mcp/index.html#constellation-discovery-and-imaging-mode-selection",
-    "href": "posts/2026-01-30-tasking-mcp/index.html#constellation-discovery-and-imaging-mode-selection",
+    "objectID": "adroitly/2026-01-30-tasking-mcp/index.html#constellation-discovery-and-imaging-mode-selection",
+    "href": "adroitly/2026-01-30-tasking-mcp/index.html#constellation-discovery-and-imaging-mode-selection",
     "title": "Satellite Tasking MCP Server",
     "section": "Constellation Discovery and Imaging Mode Selection",
     "text": "Constellation Discovery and Imaging Mode Selection\nThe MCP server provides resources and prompts to Claude, enabling it to:\n\nDiscover the available constellation assets and their imaging modes\nRecommend suitable imaging modes and satellites in the constellation, based on the tasking context (i.e. port monitoring in this scenario)."
   },
   {
-    "objectID": "posts/2026-01-30-tasking-mcp/index.html#tasking-optimisation",
-    "href": "posts/2026-01-30-tasking-mcp/index.html#tasking-optimisation",
+    "objectID": "adroitly/2026-01-30-tasking-mcp/index.html#tasking-optimisation",
+    "href": "adroitly/2026-01-30-tasking-mcp/index.html#tasking-optimisation",
     "title": "Satellite Tasking MCP Server",
     "section": "Tasking Optimisation",
     "text": "Tasking Optimisation\nWith AOI locations and constellation capabilities in its context, Claude can now optimise the task schedule. The resulting task schedule is presented to operator in the GUI for approval in a table (top left of figure), and color-coding (green AOIs are scheduled, red AOIs are not).\nThe optimisation backend considers the last-seen times for each AOI, providing a task schedule that aims to maximise the revisit frequency across all the AOIs. The constellation is utilised cooperatively, such that AOIs are not repeated between any two satellites.\nAOIs can also be given priority (not shown), which allows operators to meet varying levels of Quality of Service (QoS) in a single task schedule.\n\nAdditional visualisation functionality is provided, providing the operator an indication of imaging geometry."
   },
   {
-    "objectID": "posts/2026-01-30-tasking-mcp/index.html#tool-chaining-and-agentic-workflows",
-    "href": "posts/2026-01-30-tasking-mcp/index.html#tool-chaining-and-agentic-workflows",
+    "objectID": "adroitly/2026-01-30-tasking-mcp/index.html#tool-chaining-and-agentic-workflows",
+    "href": "adroitly/2026-01-30-tasking-mcp/index.html#tool-chaining-and-agentic-workflows",
     "title": "Satellite Tasking MCP Server",
     "section": "Tool Chaining and Agentic Workflows",
     "text": "Tool Chaining and Agentic Workflows\nIn the previous orbital period, one of the AOIs could not be fit into the task schedule. The operator can trigger an agentic workflow by simply asking for a tasking in the next available access window.\nClaude then chains several tools together to first find the next available access for this AOI, and then propose a task schedule for it.\nNotice in the chat interface that Claude is capable of proposing options: either the earliest access window available, or another access window with better geometry for downstream exploitation."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Systems engineer turned entrepreneur with expertise in spacecraft and radar systems. I’ve spent my career developing optimal solutions to complex problems where physics meets engineering constraints, personally driving technical innovation and leading teams to do the same.\nMy path has taken me from space mission designer to Program Director, leading teams through every phase of satellite development: writing proposals to secure funding, leading system design, hardware development and testing from benchtop into the wild, then coordinating 40+ people through launch and early operations. Along the way, I’ve kept my technical edge sharpened—personally developing satellite design and operation optimisation tools, and a novel signal processing architecture that I’ve presented at international workshops.\nIn 2024, I founded my own consulting practice, Adroitly Consulting. We solve optimization problems across the space and radar sector—and increasingly beyond—delivering at a pace augmented by AI. The thread that runs through our work: turning messy operational requirements into tractable problems with practical solutions.\nAvid rock climber—an activity where physics meets biomechanical constraints, and an opportunity to interact with nature."
+  },
+  {
+    "objectID": "about.html#hi-im-gabriel",
+    "href": "about.html#hi-im-gabriel",
+    "title": "About Me",
+    "section": "",
+    "text": "Systems engineer turned entrepreneur with expertise in spacecraft and radar systems. I’ve spent my career developing optimal solutions to complex problems where physics meets engineering constraints, personally driving technical innovation and leading teams to do the same.\nMy path has taken me from space mission designer to Program Director, leading teams through every phase of satellite development: writing proposals to secure funding, leading system design, hardware development and testing from benchtop into the wild, then coordinating 40+ people through launch and early operations. Along the way, I’ve kept my technical edge sharpened—personally developing satellite design and operation optimisation tools, and a novel signal processing architecture that I’ve presented at international workshops.\nIn 2024, I founded my own consulting practice, Adroitly Consulting. We solve optimization problems across the space and radar sector—and increasingly beyond—delivering at a pace augmented by AI. The thread that runs through our work: turning messy operational requirements into tractable problems with practical solutions.\nAvid rock climber—an activity where physics meets biomechanical constraints, and an opportunity to interact with nature."
+  },
+  {
+    "objectID": "about.html#connect",
+    "href": "about.html#connect",
+    "title": "About Me",
+    "section": "Connect",
+    "text": "Connect\n\n  LinkedIn \n  GitHub"
+  },
+  {
+    "objectID": "adroitly.html#showcase",
+    "href": "adroitly.html#showcase",
+    "title": "Adroitly Consulting",
+    "section": "Showcase",
+    "text": "Showcase\n\n\n\n\n\n\n\n\n\n\nSatellite Tasking MCP Server\n\n\n\nAdroitly\n\nMCP\n\noptimisation\n\n\n\nBuilding a Model Context Protocol server for satellite image tasking with natural language and agentic workflows\n\n\n\n\n\nJan 30, 2026\n\n\nGabriel\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Can You Beat TOTO? A Statistical Analysis of Singapore’s National Lottery\n\n\n\nData Analysis\n\nStatistics\n\nProbability\n\nSingapore\n\n\n\nAnalyzing 17 years of TOTO draw data to determine if lottery numbers can be predicted and whether the house always wins\n\n\n\n\n\nJan 27, 2026\n\n\nGabriel\n\n\n\n\n\n\n\n\n\n\n\n\nThe First Post\n\n\n\n\n\nNew Year, New Me\n\n\n\n\n\nJan 27, 2026\n\n\nGabriel\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/2026-01-27-TOTO-Lottery-Analysis/index.html",
@@ -110,61 +173,5 @@
     "title": "Can You Beat TOTO? A Statistical Analysis of Singapore’s National Lottery",
     "section": "So, When Does the House Lose?",
     "text": "So, When Does the House Lose?\nYou can make this happen! Don’t pray play to the TOTO god. When ticket sales are low enough, there is (A) a certainty that Singapore Pools will have to top up the group 1 prize, and (B) a greater chance that fixed prize payouts exceed the total prize pool.\nWill this ever happen? I doubt so. Even if ticket sales are abnormally low, Singapore Pools can top up the prize pool (to beyond $1M), thus incentivising more players into the draw and stacking the odds in their favour."
-  },
-  {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Satellite Tasking MCP Server\n\n\n\nAdroitly\n\nMCP\n\noptimisation\n\n\n\nBuilding a Model Context Protocol server for satellite image tasking with natural language and agentic workflows\n\n\n\n\n\nJan 30, 2026\n\n\nGabriel\n\n\n\n\n\n\n\n\n\n\n\n\nCan You Beat TOTO? A Statistical Analysis of Singapore’s National Lottery\n\n\n\nData Analysis\n\nStatistics\n\nProbability\n\nSingapore\n\n\n\nAnalyzing 17 years of TOTO draw data to determine if lottery numbers can be predicted and whether the house always wins\n\n\n\n\n\nJan 27, 2026\n\n\nGabriel\n\n\n\n\n\n\n\n\n\n\n\n\nThe First Post\n\n\n\n\n\nNew Year, New Me\n\n\n\n\n\nJan 27, 2026\n\n\nGabriel\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
-    "section": "",
-    "text": "Systems engineer turned entrepreneur with expertise in spacecraft and radar systems. I’ve spent my career developing optimal solutions to complex problems where physics meets engineering constraints, personally driving technical innovation and leading teams to do the same.\nMy path has taken me from space mission designer to Program Director, leading teams through every phase of satellite development: writing proposals to secure funding, leading system design, hardware development and testing from benchtop into the wild, then coordinating 40+ people through launch and early operations. Along the way, I’ve kept my technical edge sharpened—personally developing satellite design and operation optimisation tools, and a novel signal processing architecture that I’ve presented at international workshops.\nIn 2024, I founded my own consulting practice, Adroitly Consulting. We solve optimization problems across the space and radar sector—and increasingly beyond—delivering at a pace augmented by AI. The thread that runs through our work: turning messy operational requirements into tractable problems with practical solutions.\nAvid rock climber—an activity where physics meets biomechanical constraints, and an opportunity to interact with nature."
-  },
-  {
-    "objectID": "about.html#hi-im-gabriel",
-    "href": "about.html#hi-im-gabriel",
-    "title": "About Me",
-    "section": "",
-    "text": "Systems engineer turned entrepreneur with expertise in spacecraft and radar systems. I’ve spent my career developing optimal solutions to complex problems where physics meets engineering constraints, personally driving technical innovation and leading teams to do the same.\nMy path has taken me from space mission designer to Program Director, leading teams through every phase of satellite development: writing proposals to secure funding, leading system design, hardware development and testing from benchtop into the wild, then coordinating 40+ people through launch and early operations. Along the way, I’ve kept my technical edge sharpened—personally developing satellite design and operation optimisation tools, and a novel signal processing architecture that I’ve presented at international workshops.\nIn 2024, I founded my own consulting practice, Adroitly Consulting. We solve optimization problems across the space and radar sector—and increasingly beyond—delivering at a pace augmented by AI. The thread that runs through our work: turning messy operational requirements into tractable problems with practical solutions.\nAvid rock climber—an activity where physics meets biomechanical constraints, and an opportunity to interact with nature."
-  },
-  {
-    "objectID": "about.html#connect",
-    "href": "about.html#connect",
-    "title": "About Me",
-    "section": "Connect",
-    "text": "Connect\n\n  LinkedIn \n  GitHub"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "A Work In Progress",
-    "section": "",
-    "text": "Welcome to my blog where I explore technical topics that interest me. I write about projects, experiments, and ideas I’m working on."
-  },
-  {
-    "objectID": "index.html#hi-im-gabriel",
-    "href": "index.html#hi-im-gabriel",
-    "title": "A Work In Progress",
-    "section": "",
-    "text": "Welcome to my blog where I explore technical topics that interest me. I write about projects, experiments, and ideas I’m working on."
-  },
-  {
-    "objectID": "index.html#recent-posts",
-    "href": "index.html#recent-posts",
-    "title": "A Work In Progress",
-    "section": "Recent Posts",
-    "text": "Recent Posts\n\n\n\n\n\n\n\n\n\n\nSatellite Tasking MCP Server\n\n\n\nAdroitly\n\nMCP\n\noptimisation\n\n\n\nBuilding a Model Context Protocol server for satellite image tasking with natural language and agentic workflows\n\n\n\n\n\nJan 30, 2026\n\n\nGabriel\n\n\n\n\n\n\n\n\n\n\n\n\nCan You Beat TOTO? A Statistical Analysis of Singapore’s National Lottery\n\n\n\nData Analysis\n\nStatistics\n\nProbability\n\nSingapore\n\n\n\nAnalyzing 17 years of TOTO draw data to determine if lottery numbers can be predicted and whether the house always wins\n\n\n\n\n\nJan 27, 2026\n\n\nGabriel\n\n\n\n\n\n\n\n\n\n\n\n\nThe First Post\n\n\n\n\n\nNew Year, New Me\n\n\n\n\n\nJan 27, 2026\n\n\nGabriel\n\n\n\n\n\nNo matching items\n\nView all posts →"
-  },
-  {
-    "objectID": "posts/2026-01-27-hello-world/index.html",
-    "href": "posts/2026-01-27-hello-world/index.html",
-    "title": "The First Post",
-    "section": "",
-    "text": "credit: muvamo.com\n\n\nOver a year ago, my wife and I moved from Singapore to Vienna. While settling down in this new city, I found time to read more, think more, and code more. With the freedom to explore, I found myself easily excited with every new idea I encountered. Looking back on 2025, I realised that I started many projects, but rarely finished any (satisfactorily). I needed a better system. Hence, this hastily constructed static page I proudly call my blog.\nThis blog is a place for me to put my thoughts down, and hopefully a place for you to pick something up. Here’s to completing more projects in the coming yea-"
   }
 ]
