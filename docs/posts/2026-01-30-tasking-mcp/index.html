@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Gabriel">
+<meta name="dcterms.date" content="2026-01-30">
+<meta name="description" content="Building a Model Context Protocol server for satellite image tasking with natural language and agentic workflows">
 
-<title>Blog – Gabriel’s Blog</title>
+<title>Satellite Tasking MCP Server – Gabriel’s Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +26,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,67 +71,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-posts .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-posts'] = new List('listing-posts', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -140,7 +83,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Gabriel’s Blog</span>
     </a>
   </div>
@@ -151,15 +94,15 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./blog.html" aria-current="page"> 
+    <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -174,21 +117,65 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="QWRyb2l0bHk=">Adroitly <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RGF0YSUyMEFuYWx5c2lz">Data Analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TUNQ">MCP <span class="quarto-category-count">(1)</span></div><div class="category" data-category="b3B0aW1pc2F0aW9u">optimisation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHJvYmFiaWxpdHk=">Probability <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U2luZ2Fwb3Jl">Singapore <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U3RhdGlzdGljcw==">Statistics <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#high-revisit-imaging" id="toc-high-revisit-imaging" class="nav-link" data-scroll-target="#high-revisit-imaging">High-revisit Imaging</a></li>
+  <li><a href="#mixed-sensor-constellations" id="toc-mixed-sensor-constellations" class="nav-link" data-scroll-target="#mixed-sensor-constellations">Mixed Sensor Constellations</a></li>
+  <li><a href="#putting-it-together-the-mixed-sensor-constellation-scheduling-problem" id="toc-putting-it-together-the-mixed-sensor-constellation-scheduling-problem" class="nav-link" data-scroll-target="#putting-it-together-the-mixed-sensor-constellation-scheduling-problem">Putting It Together: The Mixed Sensor Constellation Scheduling Problem</a></li>
+  </ul></li>
+  <li><a href="#our-solution" id="toc-our-solution" class="nav-link" data-scroll-target="#our-solution">Our Solution</a></li>
+  <li><a href="#mcp-server-demonstration" id="toc-mcp-server-demonstration" class="nav-link" data-scroll-target="#mcp-server-demonstration">MCP Server Demonstration</a>
+  <ul class="collapse">
+  <li><a href="#aoi-creation" id="toc-aoi-creation" class="nav-link" data-scroll-target="#aoi-creation">AOI Creation</a></li>
+  <li><a href="#constellation-discovery-and-imaging-mode-selection" id="toc-constellation-discovery-and-imaging-mode-selection" class="nav-link" data-scroll-target="#constellation-discovery-and-imaging-mode-selection">Constellation Discovery and Imaging Mode Selection</a></li>
+  <li><a href="#tasking-optimisation" id="toc-tasking-optimisation" class="nav-link" data-scroll-target="#tasking-optimisation">Tasking Optimisation</a></li>
+  <li><a href="#tool-chaining-and-agentic-workflows" id="toc-tool-chaining-and-agentic-workflows" class="nav-link" data-scroll-target="#tool-chaining-and-agentic-workflows">Tool Chaining and Agentic Workflows</a></li>
+  </ul></li>
+  <li><a href="#mcp-server-architecture" id="toc-mcp-server-architecture" class="nav-link" data-scroll-target="#mcp-server-architecture">MCP Server Architecture</a></li>
+  <li><a href="#optimisation" id="toc-optimisation" class="nav-link" data-scroll-target="#optimisation">Optimisation</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Blog</h1>
-</div>
+<h1 class="title">Satellite Tasking MCP Server</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Adroitly</div>
+    <div class="quarto-category">MCP</div>
+    <div class="quarto-category">optimisation</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Building a Model Context Protocol server for satellite image tasking with natural language and agentic workflows
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Gabriel </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 30, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -198,113 +185,116 @@ window.Quarto = {
 </header>
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-posts">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="QWRyb2l0bHklMkNNQ1AlMkNvcHRpbWlzYXRpb24=" data-listing-date-sort="1769727600000" data-listing-file-modified-sort="1769859552418" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1458">
-<div class="thumbnail"><a href="./posts/2026-01-30-tasking-mcp/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts\2026-01-30-tasking-mcp\Gemini_Generated_Image_fnvrnffnvrnffnvr.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2026-01-30-tasking-mcp/index.html" class="no-external">Satellite Tasking MCP Server</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('QWRyb2l0bHk='); return false;">Adroitly</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TUNQ'); return false;">MCP</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('b3B0aW1pc2F0aW9u'); return false;">optimisation</div>
-
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Gemini_Generated_Image_fnvrnffnvrnffnvr.png" class="img-fluid figure-img"></p>
+<figcaption><em>credit: Nano Banana</em></figcaption>
+</figure>
 </div>
-<div class="delink listing-description"><a href="./posts/2026-01-30-tasking-mcp/index.html" class="no-external">
-<p>Building a Model Context Protocol server for satellite image tasking with natural language and agentic workflows</p>
-</a></div>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>This article presents a Model Context Protocol (MCP) server for high-revisit satellite constellation image tasking. The MCP server allows for ease of connection to most Large Language Models (LLMs), offering a flexible and agentic image tasking workflow with a natural language chat interface.</p>
+<p>Oftentimes, the number of requested images are much more than the constellation of imaging sensors can service. The selection of imaging tasks (i.e., “task schedule”) is achieved by optimising for revisit frequency, ensuring cooperation between all satellites in the constellation, and taking into account a comprehensive set of hardware constraints that guarantees a realistic solution.</p>
+<section id="high-revisit-imaging" class="level2">
+<h2 class="anchored" data-anchor-id="high-revisit-imaging">High-revisit Imaging</h2>
+<p>When considering sub-meter, high resolution imagery, optimizing revisit frequency directly increases revenue per satellite asset for several important applications.</p>
+<p>Firstly, some applications are inherently time sensitive: agriculture, deforestation monitoring, and disaster response require timely updates on the order of minutes for critical decisions to be made. An example would be the detection of man-made fires in the forests of Riau, Indonesia - an area spanning over 80,000 square kilometers - authorities need to know where to deploy their limited resources to combat this illegal farming practice before further harm occurs.</p>
+<p>Secondly, applications in predictive analytics and anomaly detection require multiple satellite images of a location to build up a baseline pattern-of-life. A short temporal sampling period on the order of hours would provide information on intra-day patterns - particularly useful for urban areas.</p>
+<p>Finally, advanced imagery products such as Synthetic Aperture Radar (SAR) tomography or interferometry require the acquisition of images in a short timeframe, to minimise temporal decorrelation of the scene.</p>
+</section>
+<section id="mixed-sensor-constellations" class="level2">
+<h2 class="anchored" data-anchor-id="mixed-sensor-constellations">Mixed Sensor Constellations</h2>
+<p>Mixed sensor constellations can be used to meet a single mission objective, often to better results than a homogeneous sensor constellation. For example, a mix of SAR and Electro-Optical (EO) sensors would be complementary in surveillance applications - EO providing easily-interpretable daytime imagery, and the active SAR sensor providing that all-weather, day-or-night imaging capability.</p>
+<p>The benefits of mixed sensor constellations are not without its operational drawbacks. Operating multiple sensors - especially from different vendors - would imply dealing with different tasking workflows or different satellite constraints. This increases the cognitive load on the operator, particularly when the time pressure of high-revisit imaging is involved.</p>
+</section>
+<section id="putting-it-together-the-mixed-sensor-constellation-scheduling-problem" class="level2">
+<h2 class="anchored" data-anchor-id="putting-it-together-the-mixed-sensor-constellation-scheduling-problem">Putting It Together: The Mixed Sensor Constellation Scheduling Problem</h2>
+<p>From our earlier discussions, a practical optimisation problem emerges: using a (potentially heterogeneous) constellation of satellite sensors, how can an operator find the optimal sequence of imaging tasks to yield high-revisit rates over a (long) list of Areas Of Interest (AOIs)?</p>
+<p>In practice, AOIs evolve or are replaced with other locations over time. Sensors come online, or become unavailable due to maintenance downtime. This implies that an optimal task schedule is not produced once, but optimised for on a regular basis. In the extreme case, operators might be attempting to solve the scheduling problem at every orbital period - some assistance and automation is clearly required.</p>
+</section>
+</section>
+<section id="our-solution" class="level1">
+<h1>Our Solution</h1>
+<p>To reduce operator cognitive load while maintaining highly optimal tasking schedules, we built an MCP server that allows operators to generate task schedules with the aid of an LLM like Claude, ChatGPT, or DeepSeek.</p>
+<ol type="1">
+<li>We <strong>abstract</strong> satellite operations at a high level, while taking into account key operator considerations such as manoeuvre, thermal, and data limits. This abstraction enables a <em>unified</em> workflow across different satellites, while respecting <em>individual</em> system constraints.</li>
+<li>We designed tools, resources, and prompts to enable <strong>agentic workflows</strong>, greatly reducing the cognitive load on the operator.</li>
+<li>AI-assisted, Human-led. For system safety, all task schedules require <strong>man-in-the-loop</strong> confirmation. Intuitive user interfaces are provided to visualise and revise the suggested task schedules.</li>
+</ol>
+</section>
+<section id="mcp-server-demonstration" class="level1">
+<h1>MCP Server Demonstration</h1>
+<p>In this section, we showcase the Tasking MCP with Claude as the LLM. The web-app GUI is shown to the operator for visualisation and manipulation during the tasking process. Importantly, the MCP server provides Claude access to the GUI state.</p>
+<p>In this demonstration, we will use the scenario of <strong>port activity monitoring</strong> in the Malacca and Singapore Straits - one of the busiest shipping lanes in the world.</p>
+<p><img src="image.png" class="img-fluid"></p>
+<section id="aoi-creation" class="level2">
+<h2 class="anchored" data-anchor-id="aoi-creation">AOI Creation</h2>
+<p>As with typical tasking workflows, the operator is able to create AOIs on the map (shown as blue boxes). Through a tool in the MCP server, Claude can see the indicated AOIs.</p>
+<p><img src="image 1.png" class="img-fluid"></p>
+<p>As an alternate workflow step, the operator can specify the AOIs directly to Claude through the chat interface through latitude-longitude coordinates, or location name. Claude creates the AOIs using another MCP tool.</p>
+<p><img src="Screenshot_2026-01-31_101115.png" class="img-fluid"></p>
+</section>
+<section id="constellation-discovery-and-imaging-mode-selection" class="level2">
+<h2 class="anchored" data-anchor-id="constellation-discovery-and-imaging-mode-selection">Constellation Discovery and Imaging Mode Selection</h2>
+<p>The MCP server provides resources and prompts to Claude, enabling it to:</p>
+<ul>
+<li>Discover the available constellation assets and their imaging modes</li>
+<li>Recommend suitable imaging modes and satellites in the constellation, based on the tasking context (i.e.&nbsp;port monitoring in this scenario).</li>
+</ul>
+<p><img src="image 3.png" class="img-fluid"></p>
+</section>
+<section id="tasking-optimisation" class="level2">
+<h2 class="anchored" data-anchor-id="tasking-optimisation">Tasking Optimisation</h2>
+<p>With AOI locations and constellation capabilities in its context, Claude can now optimise the task schedule. The resulting task schedule is presented to operator in the GUI for approval in a table (top left of figure), and color-coding (green AOIs are scheduled, red AOIs are not).</p>
+<p>The optimisation backend considers the last-seen times for each AOI, providing a task schedule that aims to maximise the revisit frequency across all the AOIs. The constellation is utilised cooperatively, such that AOIs are not repeated between any two satellites.</p>
+<p>AOIs can also be given priority (not shown), which allows operators to meet varying levels of Quality of Service (QoS) in a single task schedule.</p>
+<p><img src="image 4.png" class="img-fluid"></p>
+<p>Additional visualisation functionality is provided, providing the operator an indication of imaging geometry.</p>
+<p><img src="image 5.png" class="img-fluid"></p>
+</section>
+<section id="tool-chaining-and-agentic-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="tool-chaining-and-agentic-workflows">Tool Chaining and Agentic Workflows</h2>
+<p>In the previous orbital period, one of the AOIs could not be fit into the task schedule. The operator can trigger an agentic workflow by simply asking for a tasking in the next available access window.</p>
+<p>Claude then chains several tools together to first find the next available access for this AOI, and then propose a task schedule for it.</p>
+<p>Notice in the chat interface that Claude is capable of proposing options: either the earliest access window available, or another access window with better geometry for downstream exploitation.</p>
+<p><img src="Screenshot_2026-01-31_102813.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="mcp-server-architecture" class="level1">
+<h1>MCP Server Architecture</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image 6.png" class="img-fluid figure-img"></p>
+<figcaption>Architecture Block Diagram</figcaption>
+</figure>
 </div>
-<div class="metadata">
-<a href="./posts/2026-01-30-tasking-mcp/index.html" class="no-external">
-<div class="listing-date">
-Jan 30, 2026
-</div>
-<div class="listing-author">
-Gabriel
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="RGF0YSUyMEFuYWx5c2lzJTJDU3RhdGlzdGljcyUyQ1Byb2JhYmlsaXR5JTJDU2luZ2Fwb3Jl" data-listing-date-sort="1769468400000" data-listing-file-modified-sort="1769519565169" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4056">
-<div class="thumbnail"><a href="./posts/2026-01-27-TOTO-Lottery-Analysis/index.html" class="no-external">
+<p>The diagram above illustrates a top-level architecture: the backend consists of two main blocks, the tasking optimiser and the UI server. The UI server is exposed to the LLM, and the operator through the web UI frontend. Task schedules are sent from the optimiser to the UI server for display, and also back to the MCP server to provide context to LLM.</p>
+<p>To enable agentic workflows, the MCP server is built by adopting best practices recommended by the open-source standard. Each tool is defined with a <em>focused purpose and single responsibility</em>. The tools <em>prioritises outcomes over operations</em> by abstracting low-level API endpoints.</p>
+<p><strong>Tools</strong> allow the LLM to conduct discovery of the constellation capabilities, analyse AOI requirements, check for access windows, and optimise task schedules.</p>
+<p><strong>Resources</strong> are read-only data, providing information on constellation and imaging specifications.</p>
+<p><strong>Prompts</strong> provide templates for the LLM to gather tasking requirements from non-expert operators, decide appropriate imaging modes, and interpret optimiser results into human-readable task schedules.</p>
+</section>
+<section id="optimisation" class="level1">
+<h1>Optimisation</h1>
+<p>The Mixed Sensor Constellation Scheduling Problem is formulated as a variant of a well known optimisation problem called the <strong>Vehicle Routing Problem with Time Windows (VRPTW)</strong>. In the VRPTW, delivery drivers start from a warehouse depot and travel along routes to service customers at various locations, with each customer/location having specific time constraints. In the mental framework of our constellation tasking, the “delivery drivers” are the satellite sensors, the “customers” are the AOIs, and the “delivery routes” are the task schedules for each sensor. By construction, only one sensor can image an AOI, avoiding repeated images which degrades revisit performance for other AOIs.</p>
+<p>In order to provide feasible and realistic task schedules, the following <strong>hardware constraints</strong> are considered:</p>
+<ul>
+<li><strong>Manoeuvring dynamics</strong> constrained by each satellite’s attitude control subsystem, which determines possible slew from one AOI to another.</li>
+<li><strong>Geometrical constraints</strong> imposed by each imaging mode. SAR sensors in particular are side-looking imagers, and H/V polarisation requires specific sensor orientations relative to the AOI.</li>
+<li><strong>Data limits</strong>: onboard recorders have a maximum amount of storage capacity. A satellite with a “full” recorder cannot be used for imaging until the data is downlinked or cleared.</li>
+<li><strong>Thermal load</strong> and <strong>Power consumption</strong>: a sensor has a maximum imaging time per specified time window, in order to avoid overheating, or excessive consumption of onboard electrical resources.</li>
+</ul>
+<p>The problem is formulated as a graph, with nodes representing possible “Satellite X to AOI Y” imaging operations, and edges represent feasible transitions between imaging operations. The open-source CP-SAT solver from OR-Tools is used to determine a solution.</p>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>In this article, we have demonstrated the capabilities of our Tasking MCP server, leveraging the powerful agentic workflows of LLMs to provide optimal, high-revisit task schedules for a mixed-sensor constellation.</p>
+<p>This MCP server is currently under further development. Adroitly Consulting is working with a Singaporean satellite company to integrate the MCP server into their tasking platform. We are open to further collaboration.</p>
 
-<img loading="lazy" src="./posts/2026-01-27-TOTO-Lottery-Analysis/images/title_image.png" class="thumbnail-image">
 
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2026-01-27-TOTO-Lottery-Analysis/index.html" class="no-external">Can You Beat TOTO? A Statistical Analysis of Singapore’s National Lottery</a>
-</h3>
-<div class="listing-categories">
+</section>
 
-<div class="listing-category" onclick="window.quartoListingCategory('RGF0YSUyMEFuYWx5c2lz'); return false;">Data Analysis</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGlzdGljcw=='); return false;">Statistics</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UHJvYmFiaWxpdHk='); return false;">Probability</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U2luZ2Fwb3Jl'); return false;">Singapore</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2026-01-27-TOTO-Lottery-Analysis/index.html" class="no-external">
-<p>Analyzing 17 years of TOTO draw data to determine if lottery numbers can be predicted and whether the house always wins</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2026-01-27-TOTO-Lottery-Analysis/index.html" class="no-external">
-<div class="listing-date">
-Jan 27, 2026
-</div>
-<div class="listing-author">
-Gabriel
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="" data-listing-date-sort="1769468400000" data-listing-file-modified-sort="1769781691253" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="110">
-<div class="thumbnail"><a href="./posts/2026-01-27-hello-world/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts\2026-01-27-hello-world\Vienna-1-scaled.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2026-01-27-hello-world/index.html" class="no-external">The First Post</a>
-</h3>
-<div class="listing-categories">
-
-</div>
-<div class="delink listing-description"><a href="./posts/2026-01-27-hello-world/index.html" class="no-external">
-<p>New Year, New Me</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2026-01-27-hello-world/index.html" class="no-external">
-<div class="listing-date">
-Jan 27, 2026
-</div>
-<div class="listing-author">
-Gabriel
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
