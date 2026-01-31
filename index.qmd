@@ -1,7 +1,21 @@
 ---
-title: "gabzotronic_blog"
+title: "Work In Progress"
+listing:
+  id: recent-posts
+  contents: posts
+  sort: "date desc"
+  type: default
+  max-items: 5
+  categories: true
 ---
 
-This is a Quarto website.
+## Hi, I'm Gabriel
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Welcome to my blog where I explore technical topics that interest me. I write about projects, experiments, and ideas I'm working on.
+
+## Recent Posts
+
+::: {#recent-posts}
+:::
+
+[View all posts →](blog.qmd)
