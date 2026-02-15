@@ -4,16 +4,19 @@ project:
   render:
     - "*.qmd"
     - "posts/**/*.qmd"
+    - "adroitly/**/*.qmd"
     - "!CLAUDE.md"
 
 website:
-  title: "Gabriel's Blog"
+  title: "A Work In Progress"
+  site-url: "https://gabzotronic.github.io"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - adroitly.qmd
       - blog.qmd
+      - about.qmd
 
 format:
   html:
