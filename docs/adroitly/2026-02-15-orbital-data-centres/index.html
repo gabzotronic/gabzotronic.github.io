@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Gabriel">
+<meta name="dcterms.date" content="2026-02-15">
+<meta name="description" content="Has the AI hype train achieved escape velocity? An analysis of SpaceX’s orbital data centre for AGI training">
+
+<title>Orbital Data Centres: Mission Analysis – A Work In Progress</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">A Work In Progress</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../adroitly.html"> 
+<span class="menu-text">Adroitly Consulting</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About Me</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#space-mission-analysis-and-design" id="toc-space-mission-analysis-and-design" class="nav-link" data-scroll-target="#space-mission-analysis-and-design">Space Mission Analysis and Design</a>
+  <ul class="collapse">
+  <li><a href="#mission-phases" id="toc-mission-phases" class="nav-link" data-scroll-target="#mission-phases">Mission Phases</a></li>
+  </ul></li>
+  <li><a href="#phase-1-design-launch-and-deployment" id="toc-phase-1-design-launch-and-deployment" class="nav-link" data-scroll-target="#phase-1-design-launch-and-deployment">Phase 1: Design, Launch, and Deployment</a>
+  <ul class="collapse">
+  <li><a href="#what-orbital-regime" id="toc-what-orbital-regime" class="nav-link" data-scroll-target="#what-orbital-regime">What orbital regime?</a></li>
+  <li><a href="#how-many-gpus" id="toc-how-many-gpus" class="nav-link" data-scroll-target="#how-many-gpus">How many GPUs?</a></li>
+  <li><a href="#one-mega-satellite-or-many-satellites" id="toc-one-mega-satellite-or-many-satellites" class="nav-link" data-scroll-target="#one-mega-satellite-or-many-satellites">One Mega-Satellite, or Many Satellites?</a></li>
+  <li><a href="#satellite-constellation-architecture" id="toc-satellite-constellation-architecture" class="nav-link" data-scroll-target="#satellite-constellation-architecture">Satellite Constellation Architecture</a>
+  <ul class="collapse">
+  <li><a href="#project-suncatcher---formation-flying-fantasies" id="toc-project-suncatcher---formation-flying-fantasies" class="nav-link" data-scroll-target="#project-suncatcher---formation-flying-fantasies">Project Suncatcher - Formation Flying Fantasies</a></li>
+  <li><a href="#starcloud---big-backbones" id="toc-starcloud---big-backbones" class="nav-link" data-scroll-target="#starcloud---big-backbones">Starcloud - Big Backbones</a></li>
+  </ul></li>
+  <li><a href="#putting-gpus-into-a-box---satellite-packaging" id="toc-putting-gpus-into-a-box---satellite-packaging" class="nav-link" data-scroll-target="#putting-gpus-into-a-box---satellite-packaging">Putting GPUs into a Box - Satellite Packaging</a>
+  <ul class="collapse">
+  <li><a href="#thermal" id="toc-thermal" class="nav-link" data-scroll-target="#thermal">Thermal</a></li>
+  <li><a href="#power-and-mechanical" id="toc-power-and-mechanical" class="nav-link" data-scroll-target="#power-and-mechanical">Power and Mechanical</a></li>
+  <li><a href="#so-how-many-satellites-again" id="toc-so-how-many-satellites-again" class="nav-link" data-scroll-target="#so-how-many-satellites-again">So… How Many Satellites Again?</a></li>
+  <li><a href="#honourable-mention---radiation" id="toc-honourable-mention---radiation" class="nav-link" data-scroll-target="#honourable-mention---radiation">Honourable Mention - Radiation</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#phase-2---bring-your-own-data" id="toc-phase-2---bring-your-own-data" class="nav-link" data-scroll-target="#phase-2---bring-your-own-data">Phase 2 - Bring Your Own Data</a>
+  <ul class="collapse">
+  <li><a href="#how-much-data" id="toc-how-much-data" class="nav-link" data-scroll-target="#how-much-data">How Much Data?</a>
+  <ul class="collapse">
+  <li><a href="#the-initial-setup-getting-the-datasphere-into-orbit" id="toc-the-initial-setup-getting-the-datasphere-into-orbit" class="nav-link" data-scroll-target="#the-initial-setup-getting-the-datasphere-into-orbit">The Initial Setup: Getting the Datasphere into Orbit</a></li>
+  </ul></li>
+  <li><a href="#we-still-need-ground-space-communication" id="toc-we-still-need-ground-space-communication" class="nav-link" data-scroll-target="#we-still-need-ground-space-communication">We still need Ground-Space Communication</a>
+  <ul class="collapse">
+  <li><a href="#rf-versus-laser-comms" id="toc-rf-versus-laser-comms" class="nav-link" data-scroll-target="#rf-versus-laser-comms">RF versus Laser Comms</a></li>
+  <li><a href="#project-loon-a-robust-hybrid-solution" id="toc-project-loon-a-robust-hybrid-solution" class="nav-link" data-scroll-target="#project-loon-a-robust-hybrid-solution">Project Loon: A Robust Hybrid Solution</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#phase-3---training" id="toc-phase-3---training" class="nav-link" data-scroll-target="#phase-3---training">Phase 3 - Training</a></li>
+  <li><a href="#phase-4---model-serving" id="toc-phase-4---model-serving" class="nav-link" data-scroll-target="#phase-4---model-serving">Phase 4 - Model Serving</a>
+  <ul class="collapse">
+  <li><a href="#agi-applications" id="toc-agi-applications" class="nav-link" data-scroll-target="#agi-applications">AGI Applications</a></li>
+  <li><a href="#starlink-could-be-the-bottleneck" id="toc-starlink-could-be-the-bottleneck" class="nav-link" data-scroll-target="#starlink-could-be-the-bottleneck">Starlink Could Be the Bottleneck</a></li>
+  <li><a href="#what-about-the-moon" id="toc-what-about-the-moon" class="nav-link" data-scroll-target="#what-about-the-moon">What About the Moon?</a></li>
+  <li><a href="#can-we-utilise-the-orbital-data-centre" id="toc-can-we-utilise-the-orbital-data-centre" class="nav-link" data-scroll-target="#can-we-utilise-the-orbital-data-centre">Can We Utilise the Orbital Data Centre?</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Orbital Data Centres: Mission Analysis</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Adroitly</div>
+    <div class="quarto-category">Mission Analysis</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Has the AI hype train achieved escape velocity? An analysis of SpaceX’s orbital data centre for AGI training
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Gabriel </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 15, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="cover.jpeg" class="img-fluid figure-img"></p>
+<figcaption>credit: Grok</figcaption>
+</figure>
+</div>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>On 30th January 2026, SpaceX filed plans for an orbital data centre constellation for a whopping one million satellites in Low Earth Orbit (LEO). The very next working day, SpaceX announced its acquisition of xAI, the company behind Grok. Elon is assembling his Avengers, but for what?</p>
+<p>In Elon’s announcement on the SpaceX website, he believes that the continuously available solar power in LEO is the cost-effective way to get to Artificial General Intelligence (AGI). An all-knowing entity up in the sky? Talk about creating a god; Brandon Sanderson could take a leaf out of Elon’s book.</p>
+<p>There is much to say about the economics of the xAI acquisition with regards to the highly anticipated SpaceX IPO — we won’t dwell on this aspect, and instead refer you to <a href="https://open.spotify.com/episode/0BE2PcQOE3N1t6BnD0AC49?si=51a249981f14428f">this podcast</a>.</p>
+<p>Instead, in this post we will flesh out the mission concept for this ambitious undertaking from an engineering perspective. Through this exercise, we aim to cut through the hype and technically assess the feasibility of this endeavour.</p>
+</section>
+<section id="space-mission-analysis-and-design" class="level1">
+<h1>Space Mission Analysis and Design</h1>
+<p>Space mission analysis is a comprehensive, multidisciplinary process that defines, designs, and optimizes satellite missions to achieve objectives while minimizing cost, risk, and technical challenges. In my experience, this typically involves many lines of codes and hundreds of pages of technical documentation to explore the trade-offs for different candidate designs.</p>
+<p>We will attempt to fit all of that on the back of an envelope, to give a top-level “sensing” of this mission and avoid getting lost in the technical details.</p>
+<section id="mission-phases" class="level2">
+<h2 class="anchored" data-anchor-id="mission-phases">Mission Phases</h2>
+<p>What does it take to get to AGI in space? We see 4 key phases of the mission:</p>
+<p><img src="flowchart.png" class="img-fluid"></p>
+<ol type="1">
+<li><strong>Design, Launch, and Deployment</strong>. The data centers need to be designed, launched into space, and establish connectivity with each other and the xAI engineers on the ground.</li>
+<li><strong>Bring Your Own Data</strong>. The training data needs to be accessible by the data centers to begin training. This deserves its own phase of the mission, with interesting challenges and multiple candidate solutions.</li>
+<li><strong>Training.</strong> This phase encompasses all training stages: pre-training, fine-tuning, and reinforcement learning with human feedback.</li>
+<li><strong>Model Serving</strong>. Assuming AGI has been created, remains subservient (and did not just take control and fly off to the stars), there are now networking challenges to dispense its infinite wisdom to the world.</li>
+</ol>
+</section>
+</section>
+<section id="phase-1-design-launch-and-deployment" class="level1">
+<h1>Phase 1: Design, Launch, and Deployment</h1>
+<section id="what-orbital-regime" class="level2">
+<h2 class="anchored" data-anchor-id="what-orbital-regime">What orbital regime?</h2>
+<p>With SpaceX’s fleet of rockets, access to a launch vehicle and most orbital regimes is a non-issue. To leverage the network connectivity of the Starlink constellation, placing the data centre compute at a similar altitude is preferable as well, in LEO (~500km).</p>
+</section>
+<section id="how-many-gpus" class="level2">
+<h2 class="anchored" data-anchor-id="how-many-gpus">How many GPUs?</h2>
+<p>There aren’t many definitive sources on this, so we will proceed with a comparative analysis. Grok-4 was trained in the Colossus data centre with 200,000 H100 GPUs. Let’s assume that the huge step from current models into true AGI can be achieved with the same number of GPUs, and upgrade the H100 to B200. This represents a 2x to 3x increase in training performance.</p>
+</section>
+<section id="one-mega-satellite-or-many-satellites" class="level2">
+<h2 class="anchored" data-anchor-id="one-mega-satellite-or-many-satellites">One Mega-Satellite, or Many Satellites?</h2>
+<p>GPUs need to be housed snugly into a satellite bus, which provides electrical power, thermal regulation, and networking. At the limit, one GPU could be packed into one small-satellite. This might not be desirable as there are overheads incurred per satellite - one more set of attitude control subsystem, one more set of communication links, etc.. On the other extreme, all 200,000 GPUs could be placed into a single monolithic structure (i.e.&nbsp;“a Colossus in orbit”).</p>
+<p>In practice, launching a monolithic structure is impractical - Starship is the largest SpaceX rocket and has useable dimensions of 400m^3, while the dimensions of the 200,000 GPUs alone is approximately 38,400m^3 (without supporting satellite bus subsystems).</p>
+<p>So realistically, <strong>our orbital data centre will be launched in the form of many small satellites with intensive data networking</strong>.</p>
+</section>
+<section id="satellite-constellation-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="satellite-constellation-architecture">Satellite Constellation Architecture</h2>
+<p>How should we configure this satellite formation? The main technical challenge is finding an architecture that enables <strong>high speed communication between the GPUs across satellites.</strong></p>
+<p>Lets draw inspiration from Google’s <a href="https://research.google/blog/exploring-a-space-based-scalable-ai-infrastructure-system-design/">Project Suncatcher</a>, and <a href="https://starcloudinc.github.io/wp.pdf">Starcloud</a>.</p>
+<section id="project-suncatcher---formation-flying-fantasies" class="level3">
+<h3 class="anchored" data-anchor-id="project-suncatcher---formation-flying-fantasies">Project Suncatcher - Formation Flying Fantasies</h3>
+<p>Project Suncatcher is Google research project evaluating its version of orbital data centres. The report proposes a <strong>constellation of 81 satellites packed into a rotating circular plane 1km in diameter</strong>. The short distances between satellites allow for high inter-satellite networking speeds, and the distributed constellation architecture allows for easy scaling and replacement.</p>
+<p>The satellite formation is maintained with minimal need for propulsion, exploiting the J2-term in Earth gravitational field (<em>explainer: the Earth is “fatter” about the equator. You are further away from Earth’s centre, and centrifugal force is reduced, making you weigh less and allowing you to eat more guilt-free. Incidentally, this “disturbance in the force” perturbs satellites orbits in a predictable manner, which Google exploits in Suncatcher’s orbit design.</em>)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image.png" class="img-fluid figure-img"></p>
+<figcaption>credit: Project Suncatcher</figcaption>
+</figure>
+</div>
+<p>Project Suncatcher also studied <strong>intersatellite networking technology</strong> - while Starlink’s Optical Inter Satellite Links are capable of 100Gbps speeds, terrestrial data centre Infiniband NDR technology is at 400Gbps, with upcoming XDR technology doubling to 800Gbps (i.e.&nbsp;8x Starlink speeds). In order to get to juicy 800Gbps speeds, Google leveraged the higher Signal-to-Noise Ratios enjoyed at short inter-satellite distances, employing Commercial Off-The-Shelf (COTS) Dense Wavelength Division Multiplexing (DWDM) transceiver technology, similar to that used in terrestrial data centres.</p>
+</section>
+<section id="starcloud---big-backbones" class="level3">
+<h3 class="anchored" data-anchor-id="starcloud---big-backbones">Starcloud - Big Backbones</h3>
+<p>Starcloud is the current market leader in the orbital data centre race, having launched its prototype mission in November 2025, comprising a single H100 GPU (<em>we have a long way to go</em>).</p>
+<p>Starcloud proposes a different architecture - after satellites are launched into orbit, they physically plug into a physical structure that’s already in orbit. This physical structure provides the networking backbone for high data centre speeds, eliminating the need for tight orbit design and laser links.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image 1.png" class="img-fluid figure-img"></p>
+<figcaption>credit: Starcloud</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image 2.png" class="img-fluid figure-img"></p>
+<figcaption>credit: Starcloud</figcaption>
+</figure>
+</div>
+<p>How will the massive solar array and networking backbone get into orbit? 🤷</p>
+<p>This approach avoids the challenges of intersatellite links and tight orbital formation, at the cost of conducting in-space assembly of a 4km megastructure. For context, the International Space Station is the largest manmade structure currently, at 109m. Yes, Starcloud could point to proven automated Rendezvous, Proximity Operations, and Docking (RPOD) techniques as justification. But what about the massive solar array? With today’s approaches, this implies some form of in-space assembly technology, or precision thrusters on solar panel segments to RPOD with each other. Another challenge: how to adjust orientation to keep the solar array oriented towards the Sun?</p>
+<p>Taken as a whole, the “assemble small satellites into a monolith” approach faces more (and tougher) technical challenges. And if they succeed, you can be sure the <a href="https://www.unoosa.org/documents/pdf/copuos/stsc/2026/List_of_TP/Monday9/PDF_Slides_Spain_Alejandro_Serrano_Borlaff_Item_16.pdf">astronomers will come complaining</a>.</p>
+</section>
+</section>
+<section id="putting-gpus-into-a-box---satellite-packaging" class="level2">
+<h2 class="anchored" data-anchor-id="putting-gpus-into-a-box---satellite-packaging">Putting GPUs into a Box - Satellite Packaging</h2>
+<p>We’ve talked about how satellites could potentially be configured around each other. But what about the design of each satellite? More importantly, how many GPUs can fit on a small satellite? There are several design aspects to consider:</p>
+<section id="thermal" class="level3">
+<h3 class="anchored" data-anchor-id="thermal">Thermal</h3>
+<p>An Nvidia B200 draws 1200W of electrical power and will eventually be converted to heat. In the vacuum of space, there is no atmosphere to facilitate heat dispersal through conduction or convection (and also why no one can hear you scream). Radiation is the remaining means of heat dissipation, which is governed by Stefan-Boltzmann’s Law. For reference, <a href="https://space.skyrocket.de/doc_sdat/starlink-v2-0-ss.htm">Starlink Block v3</a> measures 7m x 3.5m = 24.5m^2 top panel area. But we should also note that there are many other heat generating modules in Starlink that need to radiate out through the same area, so adding 10 GPUs on a Starlink satellite requires approximately double the current surface area.</p>
+<div id="55d6c191" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-2-output-1.png" width="759" height="564" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="power-and-mechanical" class="level3">
+<h3 class="anchored" data-anchor-id="power-and-mechanical">Power and Mechanical</h3>
+<p>The more GPUs are hosted per satellite, the more solar panels are required to generate the required electrical power. A related design parameter is the orbit - Dawn-Dusk Sun Synchronous Orbits are capable of getting constant Sun exposure at LEO altitudes, allowing for constant electrical power generation. While this suggests that batteries might not be needed, in reality, load balancing concerns might mean a small battery is still required.</p>
+<div id="fcd8c293" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-3-output-1.png" width="759" height="564" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>For reference, Starcloud’s proposed 4km megastructure would generate approximately 6.5GW of power with the same calculations. Starcloud claims a 5GW data centre, which suggests that 1.5GW is budgeted for efficiency losses and non-workload, typical spacecraft tasks.</p>
+<p>Large-area solar panels can cause a satellite to be ungainly and challenging to steer - in physics terminology, the Moment of Inertia grows. The intuition can be illustrated by imagining an ice skater spinning on the ice - to slow her rotation, she extends her arms. Large solar panels are akin to extended arms, making it difficult for the satellite to orient itself to track the Sun.</p>
+<p>Additionally, large solar panels need to be folded into a small, compact volume to fit into the rocket’s payload fairing. The larger the solar panels, the more folds are required, presenting more mechanical challenges in securing the panels during launch, and stiffening the deployed panels in-orbit.</p>
+</section>
+<section id="so-how-many-satellites-again" class="level3">
+<h3 class="anchored" data-anchor-id="so-how-many-satellites-again">So… How Many Satellites Again?</h3>
+<p>There are many feasible solutions, which have to account for the Thermal, Power, and Mechanical considerations stated above. Handwaving-ly, we can assume that for cost effectiveness the satellite would be built on a modified Starlink assembly line and take its approximate dimensions and solar power generation (currently ~3000W). That amounts to 2 B200 GPUs, which conveniently fits the GB200 Superchip (up to 2700W).</p>
+<p>This suggests <strong>the orbital data centre will be made up of 200,000 / 2 = 100,000 satellites</strong>. Wow.</p>
+<p>Referencing Google’s Project Suncatcher again - recall that meter-level distances were required to achieve the intersatellite link speeds required for data centre link speeds. With 100,000 satellites, networking might resurface as a technical challenge. If anyone can do it, SpaceX can.</p>
+</section>
+<section id="honourable-mention---radiation" class="level3">
+<h3 class="anchored" data-anchor-id="honourable-mention---radiation">Honourable Mention - Radiation</h3>
+<p>While this section is primarily focused on estimating the number of satellites by counting how many GPUs can fit on a single satellite, there is another practical consideration that we will briefly mention - the chip fabrication process affects its survivability in Low Earth Orbit’s radiation environment. Today’s typical space-grade chips use transistors made on the 20nm process, while Nvidia’s B200 are made on TSMC’s 4nm process. The smaller the process node, the more susceptible the chip’s operations become to radiation effects. Project Suncatcher performed a more in-depth study on this aspect if you’re interested.</p>
+</section>
+</section>
+</section>
+<section id="phase-2---bring-your-own-data" class="level1">
+<h1>Phase 2 - Bring Your Own Data</h1>
+<p>At this point, we’ve finally got our satellite constellation up into orbit. In this section, lets talk about the data.</p>
+<section id="how-much-data" class="level2">
+<h2 class="anchored" data-anchor-id="how-much-data">How Much Data?</h2>
+<p>We will limit our discussion to data that is need to train AGI. As the <a href="https://en.wikipedia.org/wiki/Neural_scaling_law">scaling law</a> suggests, that’s basically <em>all the data</em>. Experts might quibble about synthetic data generation, data selectivity and quality, but let’s assume bringing “The Global Datasphere” up into orbit as a starting point. This is defined as all digital data (text, video, etc.) created, which is currently estimated at 175 zettabytes = 175,000,000,000 TB.</p>
+<p>Amazon offers data centre migration services in the form of a tricked out compute + harddrive called the Amazon Snowball at 210 TB. That makes the datasphere equivalent to 833,333,333 Snowballs. Phew.</p>
+<p>In practice, some selectivity is probably needed, reducing the data size. It’s challenging to define a realistic number for this, so let’s proceed and treat this as a worst case scenario.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image 3.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>A doggy playing in the snow. credit: AWS</figcaption>
+</figure>
+</div>
+<section id="the-initial-setup-getting-the-datasphere-into-orbit" class="level3">
+<h3 class="anchored" data-anchor-id="the-initial-setup-getting-the-datasphere-into-orbit">The Initial Setup: Getting the Datasphere into Orbit</h3>
+<p>Taking cue from Amazon, large dataset migration on-ground is accomplished physically. Given the large ground-to-orbit distances attenuating communication bandwidth (<em>more on this later</em>), it is likely data will be physically launched into orbit as well.</p>
+<p>Distributing our 833,333,333 Snowballs across 100,000 satellites means approximately 8333 Snowballs per satellite. The data would weigh 187 tons per satellite, which is clearly unreasonable.</p>
+<p>This suggests that on top of “compute” satellites, we will now have to contend with dedicated “data” satellites that supplement the data storage needs of AGI training.</p>
+</section>
+</section>
+<section id="we-still-need-ground-space-communication" class="level2">
+<h2 class="anchored" data-anchor-id="we-still-need-ground-space-communication">We still need Ground-Space Communication</h2>
+<p>Even if SpaceX has the capability to launch such quantities of satellites at a high cadence, the datasphere is only going to grow larger. Furthermore, there are will be continually updated datasets to train a new version of the AGI, or for post-training. While not on the zettabyte scale, we’re still in terrabyte or petabyte territory. That’s where Ground-Space communication links come into play.</p>
+<p>There are two main communication modes to consider: Radio Frequency (RF) and Optical (i.e.&nbsp;Laser).</p>
+<p>There are two challenges to overcome: distance, and the atmosphere.</p>
+<section id="rf-versus-laser-comms" class="level3">
+<h3 class="anchored" data-anchor-id="rf-versus-laser-comms">RF versus Laser Comms</h3>
+<p><strong>Data rate.</strong> At a fundamental level, data rate is constrained by <a href="https://en.wikipedia.org/wiki/Shannon%E2%80%93Hartley_theorem">Shannon-Hartley’s Theorem</a>,</p>
+<p><span class="math display">\[
+C \propto B
+\]</span></p>
+<p>The channel capacity (bits per second) is proportional to the bandwidth of the channel (Hz), for a given Signal to Noise Ratio. Laser links have bandwidths on the order of THz, while RF bandwidths are on the order of GHz. Laser wins, theoretically. Starlink uses RF communication in the Ku-band up to 100Mbps, while <a href="https://www.nasa.gov/directorates/somd/space-communications-navigation-program/whats-next-the-future-of-nasas-laser-communications/">NASA’s TBIRD</a> has demonstrated laser communication speeds of up to 200Gbps.</p>
+<p><strong>Atmospheric Effects</strong>. Rain and clouds affect both RF and laser, but severely attenuates laser more. Typical ground to space laser communication demonstrations have required clear skies. RF communications can operate in gloomier weather, making it more operationally robust.</p>
+</section>
+<section id="project-loon-a-robust-hybrid-solution" class="level3">
+<h3 class="anchored" data-anchor-id="project-loon-a-robust-hybrid-solution">Project Loon: A Robust Hybrid Solution</h3>
+<p><a href="https://x.company/projects/loon/">Google’s Project Loon</a> utilised a hybrid solution. The key insight was that much of atmospheric attenuation was experienced from sea-level up to 20km altitude (i.e.&nbsp;the stratosphere). A high-altitude balloon was stationed at 18km to 25km altitude. For robust communications, RF links were used down to the ground, while laser links were used for communication beyond the stratosphere.</p>
+<p>The project was initially planned to bring connectivity to rural areas, but was sadly shut down due to the lack of interest.</p>
+<p>In the AGI age, there is new need for very high speed ground to space links. As with hot air, hope may rise again.</p>
+</section>
+</section>
+</section>
+<section id="phase-3---training" class="level1">
+<h1>Phase 3 - Training</h1>
+<p>Ok, so we’ve launched our data centre, and got our data in orbit. Our infrastructure and networking are in place. Now we are ready to train our model and build intelligence!</p>
+<p>Let’s consider the training scenario in more detail: xAI engineers are seated at their desks in Palo Alto. The orbital data centre flies overhead. The engineers send the script to start the training run. The script is transferred via the newly reborn Elon x Google Loon, up to the data centre. The training run starts, and the orbital data centre continues on its orbit, passing over the North Pole. The engineers then pack up and go home, because the next time the data centre passes over Palo Alto is in 6 hours.</p>
+<p>See the trick I played there? The engineers aren’t coming back in 6 hours because Micromanager Elon would have fired them for thumb twiddling!</p>
+<p>Clearly, there is a missing piece of the puzzle here - engineers need constant contact with the orbital data centre to monitor training loss and debug issues round the clock. This is addressed with further networking.</p>
+<p>This is where the massive might of Starlink comes into play. I was being disingenuous earlier by suggesting the Loon would be part of the training run; in practice Loons are likely required for Gbps transfer of large datasets (post-launch), while the Mbps speeds of the Starlink constellation is capable of providing constant communication of training telemetry and commands.</p>
+</section>
+<section id="phase-4---model-serving" class="level1">
+<h1>Phase 4 - Model Serving</h1>
+<p>In this phase, AGI has been achieved, and now we need to serve the <del>god</del> model. This essentially means maintaining high bandwidth communications with the orbiting data centre.</p>
+<section id="agi-applications" class="level2">
+<h2 class="anchored" data-anchor-id="agi-applications">AGI Applications</h2>
+<p>To motivate the need for high bandwidth communications, let’s briefly discuss the promise of AGI. In the near term, AGI is expected to perform where current frontier models stutter - long horizon tasks, cross-domain knowledge synthesis and transfer for novel discoveries, and general decision making under uncertainty. These capabilities are easily applicable to many areas in science, robotics, and even business. Applications in these areas require high bandwidth communications to control equipment for drug discovery, to take video and other sensory inputs from robots and control them in real time, or to ingest large corpus of real time stock market and business news in order to make decisions. Compared to primarily text based inputs in today’s LLMs, a single instance of the AGI model would already require Gbps speeds (particularly for robot teleoperation); let alone multiple instances to serve customers across the world.</p>
+</section>
+<section id="starlink-could-be-the-bottleneck" class="level2">
+<h2 class="anchored" data-anchor-id="starlink-could-be-the-bottleneck">Starlink Could Be the Bottleneck</h2>
+<p>Thus far, there has been relaxed latency requirements for the ad-hoc data transfer phase and the training phase. However model serving for multimodal and robotics control applications would now demand low latency. Taking reference to terrestrial data centres, we are looking at Tbps speeds.</p>
+<p>At 100Gbps per laser link, we are talking about 10+ dedicated links at any time to achieve Tbps on aggregate. For a data centre in LEO, this might be challenging - but reconfiguring Starlink orbits could be a simple solution.</p>
+<p>Additionally, given our initial estimates of a 100,000 satellite data centre, the sheer physical area taken up by the data centre might be large enough to easily establish contact with enough Starlink satellites for the required Tbps speeds.</p>
+</section>
+<section id="what-about-the-moon" class="level2">
+<h2 class="anchored" data-anchor-id="what-about-the-moon">What About the Moon?</h2>
+<p>On 9 Feb 2026, Elon <a href="https://x.com/elonmusk/status/2020640004628742577">announced</a> a shift in SpaceX’s focus from Mars to the Moon. This could be another argument for AGI in space - placing an AGI data centre at the Earth-Moon L1 Lagrange point could act as an autonomous Mission Control for rockets launched towards the Moon. The AGI at L1 could also supervise exploration and construction activities on the Moon.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image 4.png" class="img-fluid figure-img"></p>
+<figcaption>credit: Gustavo Gargioni</figcaption>
+</figure>
+</div>
+</section>
+<section id="can-we-utilise-the-orbital-data-centre" class="level2">
+<h2 class="anchored" data-anchor-id="can-we-utilise-the-orbital-data-centre">Can We Utilise the Orbital Data Centre?</h2>
+<p>Assuming all the technical challenges have been overcome, the allure of an orbital data centre is the easy access to “free” power, from the Sun. Could the compute in space be used by us mere mortals to train our models more cheaply?</p>
+<p>For terrestrial applications, the projected increase in power supply suggests that the boring approach of training your model in a terrestrial data centre <a href="https://open.spotify.com/episode/2Wc8DUi9pIdwkhyPGw5lJ6?si=26e7e13d8d114965">might be getting cheaper</a> in the near future. If you truly want to obtain that “Made in Space” bragging right, you’d have to send your data up into orbit through Loon and Starlink, and you can be sure that you’ll be sharing at least some of those infrastructure costs.</p>
+<p><strong>But if you are in the remote sensing / Earth observation business, data centres in orbit changes the game.</strong> Modern remote sensing satellites today spend R&amp;D resources to build custom edge AI solutions to process data-heavy imagery/raw data onboard the satellite, in an effort to avoid the slow downlink speeds caused by atmospheric attenuation. With an orbiting data centres, a commercial laser link terminal is all you need to send your data for processing. By avoiding the limited hardware resources of an edge processor, more complex models can be used, improving performance.</p>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>In this article, we have traversed the Heavens and the Earth, and found engineering concepts to make the orbital data centre <em>marginally</em> feasible. The largest technical challenges appear in networking: ground to space, and between data centre elements in space. If any company can overcome these challenges, it would be the company that operates 65% of all active satellites in orbit.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

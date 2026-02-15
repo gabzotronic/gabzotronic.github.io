@@ -25,7 +25,126 @@
     "href": "index.html#recent-posts",
     "title": "A Work In Progress",
     "section": "Recent Posts",
-    "text": "Recent Posts\n\n\n\n\n\n\n\n\n\n\nSatellite Tasking MCP Server\n\n\n\nAdroitly\n\nMCP\n\noptimisation\n\n\n\nBuilding a Model Context Protocol server for satellite image tasking with natural language and agentic workflows\n\n\n\n\n\nJan 30, 2026\n\n\nGabriel\n\n\n\n\n\n\n\n\n\n\n\n\nCan You Beat TOTO? A Statistical Analysis of Singapore’s National Lottery\n\n\n\nData Analysis\n\nStatistics\n\nProbability\n\nSingapore\n\n\n\nAnalyzing 17 years of TOTO draw data to determine if lottery numbers can be predicted and whether the house always wins\n\n\n\n\n\nJan 27, 2026\n\n\nGabriel\n\n\n\n\n\n\n\n\n\n\n\n\nThe First Post\n\n\n\n\n\nNew Year, New Me\n\n\n\n\n\nJan 27, 2026\n\n\nGabriel\n\n\n\n\n\nNo matching items\n\nView more blog posts → | Company Showcase →"
+    "text": "Recent Posts\n\n\n\n\n\n\n\n\n\n\nOrbital Data Centres: Mission Analysis\n\n\n\nAdroitly\n\nMission Analysis\n\n\n\nHas the AI hype train achieved escape velocity? An analysis of SpaceX’s orbital data centre for AGI training\n\n\n\n\n\nFeb 15, 2026\n\n\nGabriel\n\n\n\n\n\n\n\n\n\n\n\n\nSatellite Tasking MCP Server\n\n\n\nAdroitly\n\nMCP\n\noptimisation\n\n\n\nBuilding a Model Context Protocol server for satellite image tasking with natural language and agentic workflows\n\n\n\n\n\nJan 30, 2026\n\n\nGabriel\n\n\n\n\n\n\n\n\n\n\n\n\nCan You Beat TOTO? A Statistical Analysis of Singapore’s National Lottery\n\n\n\nData Analysis\n\nStatistics\n\nProbability\n\nSingapore\n\n\n\nAnalyzing 17 years of TOTO draw data to determine if lottery numbers can be predicted and whether the house always wins\n\n\n\n\n\nJan 27, 2026\n\n\nGabriel\n\n\n\n\n\n\n\n\n\n\n\n\nThe First Post\n\n\n\n\n\nNew Year, New Me\n\n\n\n\n\nJan 27, 2026\n\n\nGabriel\n\n\n\n\n\nNo matching items\n\nView more blog posts → | Company Showcase →"
+  },
+  {
+    "objectID": "adroitly/2026-02-15-orbital-data-centres/index.html",
+    "href": "adroitly/2026-02-15-orbital-data-centres/index.html",
+    "title": "Orbital Data Centres: Mission Analysis",
+    "section": "",
+    "text": "credit: Grok"
+  },
+  {
+    "objectID": "adroitly/2026-02-15-orbital-data-centres/index.html#mission-phases",
+    "href": "adroitly/2026-02-15-orbital-data-centres/index.html#mission-phases",
+    "title": "Orbital Data Centres: Mission Analysis",
+    "section": "Mission Phases",
+    "text": "Mission Phases\nWhat does it take to get to AGI in space? We see 4 key phases of the mission:\n\n\nDesign, Launch, and Deployment. The data centers need to be designed, launched into space, and establish connectivity with each other and the xAI engineers on the ground.\nBring Your Own Data. The training data needs to be accessible by the data centers to begin training. This deserves its own phase of the mission, with interesting challenges and multiple candidate solutions.\nTraining. This phase encompasses all training stages: pre-training, fine-tuning, and reinforcement learning with human feedback.\nModel Serving. Assuming AGI has been created, remains subservient (and did not just take control and fly off to the stars), there are now networking challenges to dispense its infinite wisdom to the world."
+  },
+  {
+    "objectID": "adroitly/2026-02-15-orbital-data-centres/index.html#what-orbital-regime",
+    "href": "adroitly/2026-02-15-orbital-data-centres/index.html#what-orbital-regime",
+    "title": "Orbital Data Centres: Mission Analysis",
+    "section": "What orbital regime?",
+    "text": "What orbital regime?\nWith SpaceX’s fleet of rockets, access to a launch vehicle and most orbital regimes is a non-issue. To leverage the network connectivity of the Starlink constellation, placing the data centre compute at a similar altitude is preferable as well, in LEO (~500km)."
+  },
+  {
+    "objectID": "adroitly/2026-02-15-orbital-data-centres/index.html#how-many-gpus",
+    "href": "adroitly/2026-02-15-orbital-data-centres/index.html#how-many-gpus",
+    "title": "Orbital Data Centres: Mission Analysis",
+    "section": "How many GPUs?",
+    "text": "How many GPUs?\nThere aren’t many definitive sources on this, so we will proceed with a comparative analysis. Grok-4 was trained in the Colossus data centre with 200,000 H100 GPUs. Let’s assume that the huge step from current models into true AGI can be achieved with the same number of GPUs, and upgrade the H100 to B200. This represents a 2x to 3x increase in training performance."
+  },
+  {
+    "objectID": "adroitly/2026-02-15-orbital-data-centres/index.html#one-mega-satellite-or-many-satellites",
+    "href": "adroitly/2026-02-15-orbital-data-centres/index.html#one-mega-satellite-or-many-satellites",
+    "title": "Orbital Data Centres: Mission Analysis",
+    "section": "One Mega-Satellite, or Many Satellites?",
+    "text": "One Mega-Satellite, or Many Satellites?\nGPUs need to be housed snugly into a satellite bus, which provides electrical power, thermal regulation, and networking. At the limit, one GPU could be packed into one small-satellite. This might not be desirable as there are overheads incurred per satellite - one more set of attitude control subsystem, one more set of communication links, etc.. On the other extreme, all 200,000 GPUs could be placed into a single monolithic structure (i.e. “a Colossus in orbit”).\nIn practice, launching a monolithic structure is impractical - Starship is the largest SpaceX rocket and has useable dimensions of 400m^3, while the dimensions of the 200,000 GPUs alone is approximately 38,400m^3 (without supporting satellite bus subsystems).\nSo realistically, our orbital data centre will be launched in the form of many small satellites with intensive data networking."
+  },
+  {
+    "objectID": "adroitly/2026-02-15-orbital-data-centres/index.html#satellite-constellation-architecture",
+    "href": "adroitly/2026-02-15-orbital-data-centres/index.html#satellite-constellation-architecture",
+    "title": "Orbital Data Centres: Mission Analysis",
+    "section": "Satellite Constellation Architecture",
+    "text": "Satellite Constellation Architecture\nHow should we configure this satellite formation? The main technical challenge is finding an architecture that enables high speed communication between the GPUs across satellites.\nLets draw inspiration from Google’s Project Suncatcher, and Starcloud.\n\nProject Suncatcher - Formation Flying Fantasies\nProject Suncatcher is Google research project evaluating its version of orbital data centres. The report proposes a constellation of 81 satellites packed into a rotating circular plane 1km in diameter. The short distances between satellites allow for high inter-satellite networking speeds, and the distributed constellation architecture allows for easy scaling and replacement.\nThe satellite formation is maintained with minimal need for propulsion, exploiting the J2-term in Earth gravitational field (explainer: the Earth is “fatter” about the equator. You are further away from Earth’s centre, and centrifugal force is reduced, making you weigh less and allowing you to eat more guilt-free. Incidentally, this “disturbance in the force” perturbs satellites orbits in a predictable manner, which Google exploits in Suncatcher’s orbit design.)\n\n\n\ncredit: Project Suncatcher\n\n\nProject Suncatcher also studied intersatellite networking technology - while Starlink’s Optical Inter Satellite Links are capable of 100Gbps speeds, terrestrial data centre Infiniband NDR technology is at 400Gbps, with upcoming XDR technology doubling to 800Gbps (i.e. 8x Starlink speeds). In order to get to juicy 800Gbps speeds, Google leveraged the higher Signal-to-Noise Ratios enjoyed at short inter-satellite distances, employing Commercial Off-The-Shelf (COTS) Dense Wavelength Division Multiplexing (DWDM) transceiver technology, similar to that used in terrestrial data centres.\n\n\nStarcloud - Big Backbones\nStarcloud is the current market leader in the orbital data centre race, having launched its prototype mission in November 2025, comprising a single H100 GPU (we have a long way to go).\nStarcloud proposes a different architecture - after satellites are launched into orbit, they physically plug into a physical structure that’s already in orbit. This physical structure provides the networking backbone for high data centre speeds, eliminating the need for tight orbit design and laser links.\n\n\n\ncredit: Starcloud\n\n\n\n\n\ncredit: Starcloud\n\n\nHow will the massive solar array and networking backbone get into orbit? 🤷\nThis approach avoids the challenges of intersatellite links and tight orbital formation, at the cost of conducting in-space assembly of a 4km megastructure. For context, the International Space Station is the largest manmade structure currently, at 109m. Yes, Starcloud could point to proven automated Rendezvous, Proximity Operations, and Docking (RPOD) techniques as justification. But what about the massive solar array? With today’s approaches, this implies some form of in-space assembly technology, or precision thrusters on solar panel segments to RPOD with each other. Another challenge: how to adjust orientation to keep the solar array oriented towards the Sun?\nTaken as a whole, the “assemble small satellites into a monolith” approach faces more (and tougher) technical challenges. And if they succeed, you can be sure the astronomers will come complaining."
+  },
+  {
+    "objectID": "adroitly/2026-02-15-orbital-data-centres/index.html#putting-gpus-into-a-box---satellite-packaging",
+    "href": "adroitly/2026-02-15-orbital-data-centres/index.html#putting-gpus-into-a-box---satellite-packaging",
+    "title": "Orbital Data Centres: Mission Analysis",
+    "section": "Putting GPUs into a Box - Satellite Packaging",
+    "text": "Putting GPUs into a Box - Satellite Packaging\nWe’ve talked about how satellites could potentially be configured around each other. But what about the design of each satellite? More importantly, how many GPUs can fit on a small satellite? There are several design aspects to consider:\n\nThermal\nAn Nvidia B200 draws 1200W of electrical power and will eventually be converted to heat. In the vacuum of space, there is no atmosphere to facilitate heat dispersal through conduction or convection (and also why no one can hear you scream). Radiation is the remaining means of heat dissipation, which is governed by Stefan-Boltzmann’s Law. For reference, Starlink Block v3 measures 7m x 3.5m = 24.5m^2 top panel area. But we should also note that there are many other heat generating modules in Starlink that need to radiate out through the same area, so adding 10 GPUs on a Starlink satellite requires approximately double the current surface area.\n\n\n\n\n\n\n\n\n\n\n\nPower and Mechanical\nThe more GPUs are hosted per satellite, the more solar panels are required to generate the required electrical power. A related design parameter is the orbit - Dawn-Dusk Sun Synchronous Orbits are capable of getting constant Sun exposure at LEO altitudes, allowing for constant electrical power generation. While this suggests that batteries might not be needed, in reality, load balancing concerns might mean a small battery is still required.\n\n\n\n\n\n\n\n\n\nFor reference, Starcloud’s proposed 4km megastructure would generate approximately 6.5GW of power with the same calculations. Starcloud claims a 5GW data centre, which suggests that 1.5GW is budgeted for efficiency losses and non-workload, typical spacecraft tasks.\nLarge-area solar panels can cause a satellite to be ungainly and challenging to steer - in physics terminology, the Moment of Inertia grows. The intuition can be illustrated by imagining an ice skater spinning on the ice - to slow her rotation, she extends her arms. Large solar panels are akin to extended arms, making it difficult for the satellite to orient itself to track the Sun.\nAdditionally, large solar panels need to be folded into a small, compact volume to fit into the rocket’s payload fairing. The larger the solar panels, the more folds are required, presenting more mechanical challenges in securing the panels during launch, and stiffening the deployed panels in-orbit.\n\n\nSo… How Many Satellites Again?\nThere are many feasible solutions, which have to account for the Thermal, Power, and Mechanical considerations stated above. Handwaving-ly, we can assume that for cost effectiveness the satellite would be built on a modified Starlink assembly line and take its approximate dimensions and solar power generation (currently ~3000W). That amounts to 2 B200 GPUs, which conveniently fits the GB200 Superchip (up to 2700W).\nThis suggests the orbital data centre will be made up of 200,000 / 2 = 100,000 satellites. Wow.\nReferencing Google’s Project Suncatcher again - recall that meter-level distances were required to achieve the intersatellite link speeds required for data centre link speeds. With 100,000 satellites, networking might resurface as a technical challenge. If anyone can do it, SpaceX can.\n\n\nHonourable Mention - Radiation\nWhile this section is primarily focused on estimating the number of satellites by counting how many GPUs can fit on a single satellite, there is another practical consideration that we will briefly mention - the chip fabrication process affects its survivability in Low Earth Orbit’s radiation environment. Today’s typical space-grade chips use transistors made on the 20nm process, while Nvidia’s B200 are made on TSMC’s 4nm process. The smaller the process node, the more susceptible the chip’s operations become to radiation effects. Project Suncatcher performed a more in-depth study on this aspect if you’re interested."
+  },
+  {
+    "objectID": "adroitly/2026-02-15-orbital-data-centres/index.html#how-much-data",
+    "href": "adroitly/2026-02-15-orbital-data-centres/index.html#how-much-data",
+    "title": "Orbital Data Centres: Mission Analysis",
+    "section": "How Much Data?",
+    "text": "How Much Data?\nWe will limit our discussion to data that is need to train AGI. As the scaling law suggests, that’s basically all the data. Experts might quibble about synthetic data generation, data selectivity and quality, but let’s assume bringing “The Global Datasphere” up into orbit as a starting point. This is defined as all digital data (text, video, etc.) created, which is currently estimated at 175 zettabytes = 175,000,000,000 TB.\nAmazon offers data centre migration services in the form of a tricked out compute + harddrive called the Amazon Snowball at 210 TB. That makes the datasphere equivalent to 833,333,333 Snowballs. Phew.\nIn practice, some selectivity is probably needed, reducing the data size. It’s challenging to define a realistic number for this, so let’s proceed and treat this as a worst case scenario.\n\n\n\nA doggy playing in the snow. credit: AWS\n\n\n\nThe Initial Setup: Getting the Datasphere into Orbit\nTaking cue from Amazon, large dataset migration on-ground is accomplished physically. Given the large ground-to-orbit distances attenuating communication bandwidth (more on this later), it is likely data will be physically launched into orbit as well.\nDistributing our 833,333,333 Snowballs across 100,000 satellites means approximately 8333 Snowballs per satellite. The data would weigh 187 tons per satellite, which is clearly unreasonable.\nThis suggests that on top of “compute” satellites, we will now have to contend with dedicated “data” satellites that supplement the data storage needs of AGI training."
+  },
+  {
+    "objectID": "adroitly/2026-02-15-orbital-data-centres/index.html#we-still-need-ground-space-communication",
+    "href": "adroitly/2026-02-15-orbital-data-centres/index.html#we-still-need-ground-space-communication",
+    "title": "Orbital Data Centres: Mission Analysis",
+    "section": "We still need Ground-Space Communication",
+    "text": "We still need Ground-Space Communication\nEven if SpaceX has the capability to launch such quantities of satellites at a high cadence, the datasphere is only going to grow larger. Furthermore, there are will be continually updated datasets to train a new version of the AGI, or for post-training. While not on the zettabyte scale, we’re still in terrabyte or petabyte territory. That’s where Ground-Space communication links come into play.\nThere are two main communication modes to consider: Radio Frequency (RF) and Optical (i.e. Laser).\nThere are two challenges to overcome: distance, and the atmosphere.\n\nRF versus Laser Comms\nData rate. At a fundamental level, data rate is constrained by Shannon-Hartley’s Theorem,\n\\[\nC \\propto B\n\\]\nThe channel capacity (bits per second) is proportional to the bandwidth of the channel (Hz), for a given Signal to Noise Ratio. Laser links have bandwidths on the order of THz, while RF bandwidths are on the order of GHz. Laser wins, theoretically. Starlink uses RF communication in the Ku-band up to 100Mbps, while NASA’s TBIRD has demonstrated laser communication speeds of up to 200Gbps.\nAtmospheric Effects. Rain and clouds affect both RF and laser, but severely attenuates laser more. Typical ground to space laser communication demonstrations have required clear skies. RF communications can operate in gloomier weather, making it more operationally robust.\n\n\nProject Loon: A Robust Hybrid Solution\nGoogle’s Project Loon utilised a hybrid solution. The key insight was that much of atmospheric attenuation was experienced from sea-level up to 20km altitude (i.e. the stratosphere). A high-altitude balloon was stationed at 18km to 25km altitude. For robust communications, RF links were used down to the ground, while laser links were used for communication beyond the stratosphere.\nThe project was initially planned to bring connectivity to rural areas, but was sadly shut down due to the lack of interest.\nIn the AGI age, there is new need for very high speed ground to space links. As with hot air, hope may rise again."
+  },
+  {
+    "objectID": "adroitly/2026-02-15-orbital-data-centres/index.html#agi-applications",
+    "href": "adroitly/2026-02-15-orbital-data-centres/index.html#agi-applications",
+    "title": "Orbital Data Centres: Mission Analysis",
+    "section": "AGI Applications",
+    "text": "AGI Applications\nTo motivate the need for high bandwidth communications, let’s briefly discuss the promise of AGI. In the near term, AGI is expected to perform where current frontier models stutter - long horizon tasks, cross-domain knowledge synthesis and transfer for novel discoveries, and general decision making under uncertainty. These capabilities are easily applicable to many areas in science, robotics, and even business. Applications in these areas require high bandwidth communications to control equipment for drug discovery, to take video and other sensory inputs from robots and control them in real time, or to ingest large corpus of real time stock market and business news in order to make decisions. Compared to primarily text based inputs in today’s LLMs, a single instance of the AGI model would already require Gbps speeds (particularly for robot teleoperation); let alone multiple instances to serve customers across the world."
+  },
+  {
+    "objectID": "adroitly/2026-02-15-orbital-data-centres/index.html#starlink-could-be-the-bottleneck",
+    "href": "adroitly/2026-02-15-orbital-data-centres/index.html#starlink-could-be-the-bottleneck",
+    "title": "Orbital Data Centres: Mission Analysis",
+    "section": "Starlink Could Be the Bottleneck",
+    "text": "Starlink Could Be the Bottleneck\nThus far, there has been relaxed latency requirements for the ad-hoc data transfer phase and the training phase. However model serving for multimodal and robotics control applications would now demand low latency. Taking reference to terrestrial data centres, we are looking at Tbps speeds.\nAt 100Gbps per laser link, we are talking about 10+ dedicated links at any time to achieve Tbps on aggregate. For a data centre in LEO, this might be challenging - but reconfiguring Starlink orbits could be a simple solution.\nAdditionally, given our initial estimates of a 100,000 satellite data centre, the sheer physical area taken up by the data centre might be large enough to easily establish contact with enough Starlink satellites for the required Tbps speeds."
+  },
+  {
+    "objectID": "adroitly/2026-02-15-orbital-data-centres/index.html#what-about-the-moon",
+    "href": "adroitly/2026-02-15-orbital-data-centres/index.html#what-about-the-moon",
+    "title": "Orbital Data Centres: Mission Analysis",
+    "section": "What About the Moon?",
+    "text": "What About the Moon?\nOn 9 Feb 2026, Elon announced a shift in SpaceX’s focus from Mars to the Moon. This could be another argument for AGI in space - placing an AGI data centre at the Earth-Moon L1 Lagrange point could act as an autonomous Mission Control for rockets launched towards the Moon. The AGI at L1 could also supervise exploration and construction activities on the Moon.\n\n\n\ncredit: Gustavo Gargioni"
+  },
+  {
+    "objectID": "adroitly/2026-02-15-orbital-data-centres/index.html#can-we-utilise-the-orbital-data-centre",
+    "href": "adroitly/2026-02-15-orbital-data-centres/index.html#can-we-utilise-the-orbital-data-centre",
+    "title": "Orbital Data Centres: Mission Analysis",
+    "section": "Can We Utilise the Orbital Data Centre?",
+    "text": "Can We Utilise the Orbital Data Centre?\nAssuming all the technical challenges have been overcome, the allure of an orbital data centre is the easy access to “free” power, from the Sun. Could the compute in space be used by us mere mortals to train our models more cheaply?\nFor terrestrial applications, the projected increase in power supply suggests that the boring approach of training your model in a terrestrial data centre might be getting cheaper in the near future. If you truly want to obtain that “Made in Space” bragging right, you’d have to send your data up into orbit through Loon and Starlink, and you can be sure that you’ll be sharing at least some of those infrastructure costs.\nBut if you are in the remote sensing / Earth observation business, data centres in orbit changes the game. Modern remote sensing satellites today spend R&D resources to build custom edge AI solutions to process data-heavy imagery/raw data onboard the satellite, in an effort to avoid the slow downlink speeds caused by atmospheric attenuation. With an orbiting data centres, a commercial laser link terminal is all you need to send your data for processing. By avoiding the limited hardware resources of an edge processor, more complex models can be used, improving performance."
+  },
+  {
+    "objectID": "adroitly.html#showcase",
+    "href": "adroitly.html#showcase",
+    "title": "Adroitly Consulting",
+    "section": "Showcase",
+    "text": "Showcase\n\n\n\n\n\n\n\n\n\n\nOrbital Data Centres: Mission Analysis\n\n\n\nAdroitly\n\nMission Analysis\n\n\n\nHas the AI hype train achieved escape velocity? An analysis of SpaceX’s orbital data centre for AGI training\n\n\n\n\n\nFeb 15, 2026\n\n\nGabriel\n\n\n\n\n\n\n\n\n\n\n\n\nSatellite Tasking MCP Server\n\n\n\nAdroitly\n\nMCP\n\noptimisation\n\n\n\nBuilding a Model Context Protocol server for satellite image tasking with natural language and agentic workflows\n\n\n\n\n\nJan 30, 2026\n\n\nGabriel\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Systems engineer turned entrepreneur with expertise in spacecraft and radar systems. I’ve spent my career developing optimal solutions to complex problems where physics meets engineering constraints, personally driving technical innovation and leading teams to do the same.\nMy path has taken me from space mission designer to Program Director, leading teams through every phase of satellite development: writing proposals to secure funding, leading system design, hardware development and testing from benchtop into the wild, then coordinating 40+ people through launch and early operations. Along the way, I’ve kept my technical edge sharpened—personally developing optimisation tools for satellite design and operations, and a novel signal processing architecture that I’ve presented at international workshops.\nIn 2024, I founded my own consulting practice, Adroitly Consulting. We solve optimization problems across the space and radar sector—and increasingly beyond—delivering at a pace augmented by AI. The thread that runs through our work: turning messy operational requirements into tractable problems with practical solutions.\nAvid rock climber—an activity where physics meets biomechanical constraints, and an opportunity to interact with nature."
+  },
+  {
+    "objectID": "about.html#hi-im-gabriel",
+    "href": "about.html#hi-im-gabriel",
+    "title": "About Me",
+    "section": "",
+    "text": "Systems engineer turned entrepreneur with expertise in spacecraft and radar systems. I’ve spent my career developing optimal solutions to complex problems where physics meets engineering constraints, personally driving technical innovation and leading teams to do the same.\nMy path has taken me from space mission designer to Program Director, leading teams through every phase of satellite development: writing proposals to secure funding, leading system design, hardware development and testing from benchtop into the wild, then coordinating 40+ people through launch and early operations. Along the way, I’ve kept my technical edge sharpened—personally developing optimisation tools for satellite design and operations, and a novel signal processing architecture that I’ve presented at international workshops.\nIn 2024, I founded my own consulting practice, Adroitly Consulting. We solve optimization problems across the space and radar sector—and increasingly beyond—delivering at a pace augmented by AI. The thread that runs through our work: turning messy operational requirements into tractable problems with practical solutions.\nAvid rock climber—an activity where physics meets biomechanical constraints, and an opportunity to interact with nature."
+  },
+  {
+    "objectID": "about.html#connect",
+    "href": "about.html#connect",
+    "title": "About Me",
+    "section": "Connect",
+    "text": "Connect\n\n  LinkedIn \n  GitHub"
   },
   {
     "objectID": "adroitly/2026-01-30-tasking-mcp/index.html",
@@ -82,34 +201,6 @@
     "title": "Satellite Tasking MCP Server",
     "section": "Tool Chaining and Agentic Workflows",
     "text": "Tool Chaining and Agentic Workflows\nIn the previous orbital period, one of the AOIs could not be fit into the task schedule. The operator can trigger an agentic workflow by simply asking for a tasking in the next available access window.\nClaude then chains several tools together to first find the next available access for this AOI, and then propose a task schedule for it.\nNotice in the chat interface that Claude is capable of proposing options: either the earliest access window available, or another access window with better geometry for downstream exploitation."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
-    "section": "",
-    "text": "Systems engineer turned entrepreneur with expertise in spacecraft and radar systems. I’ve spent my career developing optimal solutions to complex problems where physics meets engineering constraints, personally driving technical innovation and leading teams to do the same.\nMy path has taken me from space mission designer to Program Director, leading teams through every phase of satellite development: writing proposals to secure funding, leading system design, hardware development and testing from benchtop into the wild, then coordinating 40+ people through launch and early operations. Along the way, I’ve kept my technical edge sharpened—personally developing satellite design and operation optimisation tools, and a novel signal processing architecture that I’ve presented at international workshops.\nIn 2024, I founded my own consulting practice, Adroitly Consulting. We solve optimization problems across the space and radar sector—and increasingly beyond—delivering at a pace augmented by AI. The thread that runs through our work: turning messy operational requirements into tractable problems with practical solutions.\nAvid rock climber—an activity where physics meets biomechanical constraints, and an opportunity to interact with nature."
-  },
-  {
-    "objectID": "about.html#hi-im-gabriel",
-    "href": "about.html#hi-im-gabriel",
-    "title": "About Me",
-    "section": "",
-    "text": "Systems engineer turned entrepreneur with expertise in spacecraft and radar systems. I’ve spent my career developing optimal solutions to complex problems where physics meets engineering constraints, personally driving technical innovation and leading teams to do the same.\nMy path has taken me from space mission designer to Program Director, leading teams through every phase of satellite development: writing proposals to secure funding, leading system design, hardware development and testing from benchtop into the wild, then coordinating 40+ people through launch and early operations. Along the way, I’ve kept my technical edge sharpened—personally developing satellite design and operation optimisation tools, and a novel signal processing architecture that I’ve presented at international workshops.\nIn 2024, I founded my own consulting practice, Adroitly Consulting. We solve optimization problems across the space and radar sector—and increasingly beyond—delivering at a pace augmented by AI. The thread that runs through our work: turning messy operational requirements into tractable problems with practical solutions.\nAvid rock climber—an activity where physics meets biomechanical constraints, and an opportunity to interact with nature."
-  },
-  {
-    "objectID": "about.html#connect",
-    "href": "about.html#connect",
-    "title": "About Me",
-    "section": "Connect",
-    "text": "Connect\n\n  LinkedIn \n  GitHub"
-  },
-  {
-    "objectID": "adroitly.html#showcase",
-    "href": "adroitly.html#showcase",
-    "title": "Adroitly Consulting",
-    "section": "Showcase",
-    "text": "Showcase\n\n\n\n\n\n\n\n\n\n\nSatellite Tasking MCP Server\n\n\n\nAdroitly\n\nMCP\n\noptimisation\n\n\n\nBuilding a Model Context Protocol server for satellite image tasking with natural language and agentic workflows\n\n\n\n\n\nJan 30, 2026\n\n\nGabriel\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog.html",
