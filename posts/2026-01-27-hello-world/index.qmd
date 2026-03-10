@@ -1,36 +1,13 @@
 ---
-title: "My First Blog Post"
-description: "A post with Python code"
+title: "The First Post"
+description: "New Year, New Me"
 author: "Gabriel"
 date: 2026-01-27
-categories: [python, tutorial]
+categories: []
 ---
 
-## Introduction
+![*credit: muvamo.com*](Vienna-1-scaled.jpg)
 
-This is my first blog post! I'm going to show you some Python code.
+Over a year ago, my wife and I moved from Singapore to Vienna. While settling down in this new city, I found time to read more, think more, and code more. With the freedom to explore, I found myself easily excited with every new idea I encountered. Looking back on 2025, I realised that I started many projects, but rarely finished any (satisfactorily). I needed a better system. Hence, this hastily constructed static page I proudly call my blog.
 
-## Basic Python Example
-
-Here's a simple Python function:
-```{python}
-def greet(name):
-    return f"Hello, {name}!"
-
-result = greet("World")
-print(result)
-```
-
-## Working with Data
-
-You can also work with data structures:
-```{python}
-numbers = [1, 2, 3, 4, 5]
-squared = [x**2 for x in numbers]
-print(f"Original: {numbers}")
-print(f"Squared: {squared}")
-```
-
-## Conclusion
-
-That's it! You now know how to write blog posts with Quarto.
+This blog is a place for me to put my thoughts down, and hopefully a place for you to pick something up. Here's to completing more projects in the coming yea-

@@ -1,8 +1,8 @@
 ---
-title: "Work In Progress"
+title: ""
 listing:
   id: recent-posts
-  contents: posts
+  contents: ["posts", "adroitly"]
   sort: "date desc"
   type: default
   max-items: 5
@@ -18,4 +18,4 @@ Welcome to my blog where I explore technical topics that interest me. I write ab
 ::: {#recent-posts}
 :::
 
-[View all posts →](blog.qmd)
+[View more blog posts →](blog.qmd)  |  [Company Showcase →](adroitly.qmd)

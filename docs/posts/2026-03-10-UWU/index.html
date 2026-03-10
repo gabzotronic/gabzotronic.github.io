@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Gabriel">
+<meta name="dcterms.date" content="2026-03-10">
+<meta name="description" content="Vibecoding works, even for the clueless like me">
 
-<title>Blog – A Work In Progress</title>
+<title>FIGHT UWU BIRD: An Adventure in Vibe Coding – A Work In Progress</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +26,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,67 +71,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-posts .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-posts'] = new List('listing-posts', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -140,7 +83,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">A Work In Progress</span>
     </a>
   </div>
@@ -151,19 +94,19 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./adroitly.html"> 
+    <a class="nav-link" href="../../adroitly.html"> 
 <span class="menu-text">Adroitly Consulting</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./blog.html" aria-current="page"> 
+    <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About Me</span></a>
   </li>  
 </ul>
@@ -178,21 +121,74 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="RGF0YSUyMEFuYWx5c2lz">Data Analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHJvYmFiaWxpdHk=">Probability <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U2luZ2Fwb3Jl">Singapore <span class="quarto-category-count">(2)</span></div><div class="category" data-category="U3RhdGlzdGljcw==">Statistics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dmliZWNvZGluZw==">vibecoding <span class="quarto-category-count">(1)</span></div><div class="category" data-category="d2ViJTIwYXJjaGl0ZWN0dXJl">web architecture <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#the-idea" id="toc-the-idea" class="nav-link" data-scroll-target="#the-idea">The Idea</a>
+  <ul class="collapse">
+  <li><a href="#cooking-with-claude" id="toc-cooking-with-claude" class="nav-link" data-scroll-target="#cooking-with-claude">Cooking with Claude</a></li>
+  </ul></li>
+  <li><a href="#first-try" id="toc-first-try" class="nav-link" data-scroll-target="#first-try">First Try</a>
+  <ul class="collapse">
+  <li><a href="#but" id="toc-but" class="nav-link" data-scroll-target="#but">But…</a></li>
+  </ul></li>
+  <li><a href="#second-try" id="toc-second-try" class="nav-link" data-scroll-target="#second-try">Second Try</a></li>
+  <li><a href="#sprinkles-and-seasoning" id="toc-sprinkles-and-seasoning" class="nav-link" data-scroll-target="#sprinkles-and-seasoning">Sprinkles and Seasoning</a>
+  <ul class="collapse">
+  <li><a href="#leaderboard" id="toc-leaderboard" class="nav-link" data-scroll-target="#leaderboard">Leaderboard</a></li>
+  <li><a href="#landing-page" id="toc-landing-page" class="nav-link" data-scroll-target="#landing-page">Landing Page</a></li>
+  <li><a href="#link-sharing" id="toc-link-sharing" class="nav-link" data-scroll-target="#link-sharing">Link Sharing</a></li>
+  </ul></li>
+  <li><a href="#deployment" id="toc-deployment" class="nav-link" data-scroll-target="#deployment">Deployment</a>
+  <ul class="collapse">
+  <li><a href="#debugging" id="toc-debugging" class="nav-link" data-scroll-target="#debugging">Debugging</a></li>
+  <li><a href="#reception" id="toc-reception" class="nav-link" data-scroll-target="#reception">Reception</a></li>
+  </ul></li>
+  <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections">Reflections</a>
+  <ul class="collapse">
+  <li><a href="#mental-framework" id="toc-mental-framework" class="nav-link" data-scroll-target="#mental-framework">Mental Framework</a></li>
+  <li><a href="#moving-up-the-value-chain" id="toc-moving-up-the-value-chain" class="nav-link" data-scroll-target="#moving-up-the-value-chain">Moving Up the Value Chain</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Blog</h1>
-</div>
+<h1 class="title">FIGHT UWU BIRD: An Adventure in Vibe Coding</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">web architecture</div>
+    <div class="quarto-category">Singapore</div>
+    <div class="quarto-category">vibecoding</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Vibecoding works, even for the clueless like me
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Gabriel </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 10, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -202,113 +198,97 @@ window.Quarto = {
 </header>
 
 
+<p><img src="share_image.png" class="img-fluid"></p>
+<p>[Play the game <a href="https://fightuwubird.com">here</a>]</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>I made a simple game with a distinctly Singaporean flavour. Yes, I grew up in Singapore, waking up to the distinctive calls of the Koel bird (a.k.a. Uwu bird) which inspired this game. No, I don’t have any experience in full-stack development or the skills to build a web app. Yes, I have been using generative AI (specifically Claude Code) for more than a year now, increasing the my pace of development - <em>on tasks that I personally know how to do</em>. So what’s new?</p>
+<p>For me personally, this is the first time I’ve successfully “vibe-coded” something I have no expertise in. Previously, I’ve had a clear view of the entire scope of the task — e.g.&nbsp;build a signal processing pipeline — and prompted Claude in building each block within the pipeline (e.g.&nbsp;do fourier transform, then apply a filter here, etc.).</p>
+<p>Vibe coding (or now its evolved form: <a href="https://x.com/karpathy/status/2019137879310836075">agentic engineering</a>) is different in that you describe outcomes, not steps to take. And the LLM models have gotten good enough that the outcomes can be achieved with a lot less handholding.</p>
+<p>In the remainder of this blog, I’ll describe my journey in co-creating the game with Claude.</p>
+</section>
+<section id="the-idea" class="level1">
+<h1>The Idea</h1>
+<p>Two main sources of inspiration for this game. First: on an overseas trip with some Singaporean friends, we started “uwu-ing” to geolocate and find each other in a crowd. It was such a unique sound that for some reason perks up Singaporean ears, but isn’t too much of nuisance for the Europeans we were surrounded by. Second: <a href="https://www.reddit.com/r/askSingapore/comments/1p72dng/how_do_you_deal_with_the_uwu_bird_right_outside/">this reddit post</a> (hilarious).</p>
+<p>Hence, the initial idea: what if you could make an app that “fights” the real-world Uwu bird disturbing your sleep at 5AM, getting it to shut up?</p>
+<p>Then, the (debatably) better idea: what if there was no real-world Uwu bird at all, and I just made it into a game?</p>
+<section id="cooking-with-claude" class="level2">
+<h2 class="anchored" data-anchor-id="cooking-with-claude">Cooking with Claude</h2>
+<p>So I described to Claude the basic idea of the game: to make progressively higher pitched “uwu” calls. Claude then thought for a bit, and gave a basic outline to build out this game. At this point it was just the signal processing pipeline — to take in human “uwus” as audio input, and compare it against the game’s reference.</p>
+<p>I also knew it had to hosted on the web, because who downloads apps nowadays? Claude then suggested a frontend / backend server configuration. As Claude explained to me, the responsibility of the backend server was to do the signal processing, while the frontend server would display cues and results to the player.</p>
+<p><em>Tip: When vibe coding with any frontier model, first have a conversation with it on your desired outcomes. Then, tell it to write you a tech spec document before starting to code. This tech spec will be the grounds to evaluate the efficacy of the code. Just feed it back to the model and ask it to evaluate what it has written.</em></p>
+</section>
+</section>
+<section id="first-try" class="level1">
+<h1>First Try</h1>
+<p>With that very vague brief and 10mins of conversation, I let Claude cook while I made coffee. In 10mins it was done. Here’s the crazy thing - the entire game worked! No issues on the first playthrough, except that I lost because I couldn’t “uwu” at a high enough pitch. Even so, the “You Lost” display animation was already baked in, and I marvelled in my defeat. Claude even (pre-emptively) told me what configuration parameters to change to make the game easier.</p>
+<section id="but" class="level2">
+<h2 class="anchored" data-anchor-id="but">But…</h2>
+<p>While the game played well, the website design was very generic. Granted, I did not specify anything, and Claude already took the initiative to include a “dark aesthetic to mirror the Koel bird’s pre-dawn calls”. Still, I wanted something more fun.</p>
+<p>Again, very hazy thought went into this. The flow went like this: “I need a better design for this fighting game” → “fighting, like battling this noisy bird monster” → “OH LIKE POKEMON BATTLE?”</p>
+<p>So I told Claude I wanted to make it a pokemon battle aesthetic. It looked for CSS stylings that reflected the vibe, and asked me to provide images for the battle. I went onto Grok and generated the UWU Bird and Annoyed Auntie images, and then set Claude loose.</p>
+<p><em>Tip: As before, I asked for a tech spec for the frontend re-design as the basis of evaluation. I also prompted it to use Playwright library to test its code implementation, as that allowed it to “see” what’s displayed on the website</em></p>
+<p><em>Another tip: I asked Grok for an image of the bird first, then used that image as input to generate a “win” or “lose” video. Claude then coded it such that the bird </em>hadoukens* or <em>cries</em> depending on whether you win or lose.*</p>
+</section>
+</section>
+<section id="second-try" class="level1">
+<h1>Second Try</h1>
+<p>Another 10mins later, Claude was done. That’s basically everything you see about the game experience - including the health bar animations, the way the bird “vibrates” when it makes the “uwu” call, etc. And all it took was two 10min conversations, wow.</p>
+</section>
+<section id="sprinkles-and-seasoning" class="level1">
+<h1>Sprinkles and Seasoning</h1>
+<p>With the core game done and still a couple hours left before lunch, my brain started whirring. How can I make this project better? As the adage goes, “the only reward for good work is more work” — so I made Claude work more.</p>
+<section id="leaderboard" class="level2">
+<h2 class="anchored" data-anchor-id="leaderboard">Leaderboard</h2>
+<p><img src="image.png" class="img-fluid"></p>
+<p>In keeping with the retro gaming aesthetic, I thought user engagement might increase if I added a leaderboard. So I ask Claude, and it told me what it needed (i.e.&nbsp;a database to keep track of scores), proposed a visual layout, and a way of scoring each attempt through adaptation of the signal processing pipeline.</p>
+<p>I also remembered how naughty I was in arcade games as a kid, so I asked Claude to do a profanity check for leaderboard entries - it found a Python library, connected to the leaderboard database, added scoring, and the leaderboard function was ready in another 2mins. It even “sanitised” the entries on its own, so hackers can’t inject malicious commands into that PlayerName textbox entry. I didn’t even think of that until it told me.</p>
+</section>
+<section id="landing-page" class="level2">
+<h2 class="anchored" data-anchor-id="landing-page">Landing Page</h2>
+<p><img src="image 1.png" class="img-fluid"></p>
+<p>To be honest, I didn’t even write the copy at the landing page myself - Claude did that. However, I wanted to credit the inspiration for the game, so I gave it the link to the reddit thread and it inserted it in.</p>
+</section>
+<section id="link-sharing" class="level2">
+<h2 class="anchored" data-anchor-id="link-sharing">Link Sharing</h2>
+<p>When I started testing it out with friends, I realised my link just looked this: <a href="https://fightuwubird.com">https://fightuwubird.com</a>. But sharing social posts on Whatsapp came with rich visual information (you can even play Instagram videos in the chat), which I wanted to mimic. I told Claude, and it told me about something called Open Graph protocol, and asked me for a display image. A quick paintjob later, and Claude implemented the Open Graph protocol so my links now look like this:</p>
+<p><img src="image 2.png" class="img-fluid"></p>
+<p>When you share your scores, the link and description changes. But clicking on that link still brings you back to the landing page.</p>
+<p><img src="image 3.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="deployment" class="level1">
+<h1>Deployment</h1>
+<p>Up till now, I was testing the app on my own machine. To serve it to the hundreds of Annoyed Aunties out there, I needed an easy way to host it. Claude suggested using Railway, and guided me through on the setup. This also included connecting up the leaderboard database, and basic analytics with Umami.</p>
+<p>Apart from generating images, this was the most manual process, but it was made easy with Claude.</p>
+<section id="debugging" class="level2">
+<h2 class="anchored" data-anchor-id="debugging">Debugging</h2>
+<p>(Finally having to debug, and only near the very end of development)</p>
+<p>I knew from personal experience that the website will likely be visited on mobile, because who’s going to open their laptop just to scream birdcalls into it? While Claude optimised for mobile, there were teething issues with iOS because I didn’t have an iPhone to test with. I described the problems my friends were having, and Claude fixed them, pushed the code, and Railway auto-deployed it. It took an hour for Claude to isolate the problem, but honestly it was relatively painless considering I didn’t have a clue what was wrong.</p>
+</section>
+<section id="reception" class="level2">
+<h2 class="anchored" data-anchor-id="reception">Reception</h2>
+<p>It’s been two weeks since the site went live, and we’ve gotten almost 300 rounds played so far. Friends have been generally supportive, and I’m happy with results after a weekend of work.</p>
+<p><img src="image 4.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="reflections" class="level1">
+<h1>Reflections</h1>
+<section id="mental-framework" class="level2">
+<h2 class="anchored" data-anchor-id="mental-framework">Mental Framework</h2>
+<p>During this vibe-coding adventure, I realised that success in this approach comes down to logical thinking, and an engineering mentality. There’s no need to in-depth technical knowledge in the coding languages or libraries being used. Instead, success depends on the ability to describe the desired outcome, to break down the outcomes into chunks for independent testing. It was almost an exercise in engineering management, rather software development.</p>
+</section>
+<section id="moving-up-the-value-chain" class="level2">
+<h2 class="anchored" data-anchor-id="moving-up-the-value-chain">Moving Up the Value Chain</h2>
+<p>If you’ve been on the internet at all recently, you’d have certainly come across news on generative AI “taking over our jobs”. Technological progress has always threatened job security, but that doesn’t mean workers can’t upskill and move up the value chain in their industry or others. An example from history: with the introduction of the Personal Computer, the need for a typing pool in offices were phased out. These typists lost their core job (the physical act of typing), since a computer was now sitting on every desk. However, many moved up the value chain, becoming executive assistants or data entry specialists.</p>
+<p>We’re in a similar age today - technology enablers like generative AI are democratising the skill of software engineering the same way Personal Computers democratised typing and document generation. I decided to try moving up the value chain myself, and you can too.</p>
+<p>Perhaps the fears are compounded today because of the terrifying pace of AI improvements. I don’t deny that exponential trend, but I can also say from this weekend that the improvement in capability makes it easier to use, not harder. Increasingly these days, you just need to talk to the model.</p>
 
 
+</section>
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-posts">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="d2ViJTIwYXJjaGl0ZWN0dXJlJTJDU2luZ2Fwb3JlJTJDdmliZWNvZGluZw==" data-listing-date-sort="1773097200000" data-listing-file-modified-sort="1773144451064" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1614">
-<div class="thumbnail"><a href="./posts/2026-03-10-UWU/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts\2026-03-10-UWU\share_image.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2026-03-10-UWU/index.html" class="no-external">FIGHT UWU BIRD: An Adventure in Vibe Coding</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('d2ViJTIwYXJjaGl0ZWN0dXJl'); return false;">web architecture</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U2luZ2Fwb3Jl'); return false;">Singapore</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('dmliZWNvZGluZw=='); return false;">vibecoding</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2026-03-10-UWU/index.html" class="no-external">
-<p>Vibecoding works, even for the clueless like me</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2026-03-10-UWU/index.html" class="no-external">
-<div class="listing-date">
-Mar 10, 2026
-</div>
-<div class="listing-author">
-Gabriel
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="RGF0YSUyMEFuYWx5c2lzJTJDU3RhdGlzdGljcyUyQ1Byb2JhYmlsaXR5JTJDU2luZ2Fwb3Jl" data-listing-date-sort="1769468400000" data-listing-file-modified-sort="1769519565169" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4056">
-<div class="thumbnail"><a href="./posts/2026-01-27-TOTO-Lottery-Analysis/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2026-01-27-TOTO-Lottery-Analysis/images/title_image.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2026-01-27-TOTO-Lottery-Analysis/index.html" class="no-external">Can You Beat TOTO? A Statistical Analysis of Singapore’s National Lottery</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('RGF0YSUyMEFuYWx5c2lz'); return false;">Data Analysis</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGlzdGljcw=='); return false;">Statistics</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UHJvYmFiaWxpdHk='); return false;">Probability</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U2luZ2Fwb3Jl'); return false;">Singapore</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2026-01-27-TOTO-Lottery-Analysis/index.html" class="no-external">
-<p>Analyzing 17 years of TOTO draw data to determine if lottery numbers can be predicted and whether the house always wins</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2026-01-27-TOTO-Lottery-Analysis/index.html" class="no-external">
-<div class="listing-date">
-Jan 27, 2026
-</div>
-<div class="listing-author">
-Gabriel
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="" data-listing-date-sort="1769468400000" data-listing-file-modified-sort="1769781691253" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="110">
-<div class="thumbnail"><a href="./posts/2026-01-27-hello-world/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts\2026-01-27-hello-world\Vienna-1-scaled.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2026-01-27-hello-world/index.html" class="no-external">The First Post</a>
-</h3>
-<div class="listing-categories">
-
-</div>
-<div class="delink listing-description"><a href="./posts/2026-01-27-hello-world/index.html" class="no-external">
-<p>New Year, New Me</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2026-01-27-hello-world/index.html" class="no-external">
-<div class="listing-date">
-Jan 27, 2026
-</div>
-<div class="listing-author">
-Gabriel
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

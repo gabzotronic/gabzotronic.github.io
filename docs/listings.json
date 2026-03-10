@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/2026-03-10-UWU/index.html",
       "/adroitly/2026-02-15-orbital-data-centres/index.html",
       "/adroitly/2026-01-30-tasking-mcp/index.html",
       "/posts/2026-01-27-TOTO-Lottery-Analysis/index.html",
@@ -18,6 +19,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/2026-03-10-UWU/index.html",
       "/posts/2026-01-27-TOTO-Lottery-Analysis/index.html",
       "/posts/2026-01-27-hello-world/index.html"
     ]
